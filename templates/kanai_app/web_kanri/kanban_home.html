@@ -1,0 +1,53 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+
+<div class="container-fluid" style="display: table-cell !important">
+  <div class="row flex-nowrap">
+    {% for list in kanban_home_list %}
+    <div class="bg-light m-3 p-2 " style="width: 240px; height: 100%">
+      <h4>{{ list.title }}
+        <a href="{% url 'kanban:kanban_update' list.pk %}" class="text-dark"><i class="far fa-edit fa-xs"></i></a>
+        <a href="{% url 'kanban:kanban_delete' list.pk %}" class="text-dark"><i class="far fa-trash-alt fa-xs"></i></a>
+      </h4>
+
+      {% for card in list.card_set.all %}
+      <a href="{% url 'kanban:card_detail' card.pk %}" class="card m-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <footer>
+            <small class="text-muted">作成者: {{ card.user.username }}</small>
+          </footer>
+        </div>
+      </a>
+      {% endfor %}
+
+      <!--  #################### 更に新規追加 プライマリキー最初から選択 ##################  -->
+      <a href="{% url 'kanban:cards_create_from_home' list.pk %}" class="text-dark"><i class="far fa-plus-square"></i> さらにカードを追加</a>
+    </div>
+    {% endfor %}
+
+ 
+
+  </div>
+
+    
+  
+   
+
+</div> <!--  container-fluid END -->
+
+<div>
+<div style="margin: 0 auto;width:1000px;">
+  <p>
+    <a href="{% url 'kanban:kanban_create' %}" class="btn btn-success" style="position: relative;
+    left: 15%;">
+    新規作成
+    </a>
+    </p>
+</div>
+</div>
+
+
+{% endblock %}

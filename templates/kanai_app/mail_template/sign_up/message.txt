@@ -1,0 +1,7 @@
+ユーザーネーム：{{ user.name }}
+
+下記URLよりサイトにアクセスの上、アカウント登録をお願いいたします。
+※まだアカウント登録は完了しておりませんのでご注意ください。
+
+本登録用URL
+{{ protocol}}://{{ domain }}{% url 'kanai_app:sign_up_done' token %}

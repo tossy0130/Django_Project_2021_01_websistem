@@ -1,0 +1,210 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}取扱商品カテゴリー　一覧 | {{ block.super }}{% endblock title %}
+
+{% block content1 %}
+
+{% load  static %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>取扱商品カテゴリー　一覧</h1>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-12 col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title"></h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+
+
+<div class="table-responsive">
+    <table class="table table-striped">
+
+         <thead>
+        <tr>
+            <th>（中）品名カテゴリー  コード</th>
+            <th>（中）品名カテゴリー　タイトル</th>
+            <th>親カテゴリーコード</th>
+            <th>親カテゴリー名</th>
+             <th>画像サムネイル用</th>
+            　<th>変更</th>
+             <ht>削除</th>
+            
+        </tr>
+        </thead>
+    <tbody>
+
+{% for item in object_list %}
+
+{% if item.M_Toriatukai_code.Toriatukai_code == item.M_code %}
+
+        <tr>
+    <th>   
+        <p>{{item.Medium_code}}</p>
+    </th>
+
+     <td> 
+        <p>{{item.Medium_title}}</p>
+    </td>
+
+    <td> 
+        <p>{{item.M_Toriatukai_code.Toriatukai_code}}</p>
+    </td>
+
+    <td> 
+        <p>{{item.M_Toriatukai_code.Toriatukai_title}}</p>
+    </td>
+
+       <td> 
+
+       <!-- 0526 変更 <p><img src="{{ MEDIA_URL }}{{item.Medium_image}}" width="105"></p> -->
+        <p><img src="{{item.Medium_image.url}}" width="105"></p>
+    </td>
+
+    <td>
+        <button type="button" class="button is-primary"><a href="{% url 'kanai_app:Medium_categoryUpdateView' item.pk %}">
+        変更
+        </a>
+        </button>
+    </td>
+
+    <td>
+
+    <!-- モダールボタン -->
+    <button type="button" class="button is-danger delete-modal-button" data-deleteurl="#">削除</button>
+     <!-- モダールボタン END -->
+    
+    <!-- 削除確認　モーダル　表示 -->
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">データ削除の確認</p>
+            </header>
+            <section class="modal-card-body">
+                本当に削除してよろしいですか。
+            </section>
+            <footer class="modal-card-foot">
+                <form action="" method="POST" id="delete-form">
+                    {% csrf_token %}
+                    <button type="button" class="button is-info" id="delete-cancel-button">キャンセル</button>
+                    <button type="submit" class="button is-danger">削除する</button>
+                </form>
+            </footer>
+        </div>
+    </div>
+    <!-- 削除確認　モーダル　表示 END -->
+
+    </td>
+
+{% else %}
+
+<p>ノーかてーごりー</p>
+     
+{% endif %}
+
+{%  endfor %}
+     </tbody>
+   </table>
+    </div>
+
+
+              <hr>
+            </div>
+
+            <div class="text-center" style="margin-bottom: 20px;">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="#" class="btn btn-primary btn-sm" role="button">一覧表示画面へ</a>
+            </div>
+
+<!--================== ページネーション　開始 ===================-->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    {% endif %}
+    {% for num in paginator.page_range %}
+    {% if page_obj.number == num %}
+    <li class="page-item active">
+      <span class="page-link">
+        {{ num }}
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+<!--================== ページネーション END ===================-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+{% endblock %}
+
+{% block h_cate_list_js %}
+
+<script>
+        const deleteForm = document.getElementById('delete-form');
+        const modal = document.getElementById('modal');
+        const deleteCancelButton = document.getElementById('delete-cancel-button');
+        const deleteModalButtons = document.getElementsByClassName('delete-modal-button');
+
+        for (const button of deleteModalButtons) {
+            button.addEventListener('click', () => {
+                modal.classList.add('is-active');
+                deleteForm.action = button.dataset.deleteurl;
+            });
+        }
+
+        deleteCancelButton.addEventListener('click', () => {
+            modal.classList.remove('is-active');
+        });
+    </script>
+
+
+{% endblock %}

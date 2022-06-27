@@ -1,0 +1,51 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+<style>
+
+/*** h1 ***/
+.to_do_h1 {padding: 20px 10px;font-size: 22px;font-weight: 500;margin: 0 0px 0 25px;}
+
+</style>
+
+<div class="content-wrapper">
+
+<h1 class="to_do_h1">
+カード一覧
+</h1>
+
+<p>
+    <a href="{% url 'kanban:card_create' %}" class="btn btn-success">
+    新規作成
+    </a>
+</p>
+
+ <div class="card-columns">
+
+    {% for item in card_list %}
+
+    <a href="{% url 'kanban:card_detail' item.pk %}" class="card">
+
+        <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5> 
+            <footer>
+            <small class="text-muted">作成者: {{ item.user.username }}</small>
+            </footer>
+        </div>
+    </a>
+
+
+    {% endfor %}
+
+ </div> <!-- card-columns END -->
+
+ 
+  <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:kanri_top' %}" class="btn btn-primary btn-sm" role="button">管理画面トップへ戻る</a>
+  </div>
+
+</div> <!-- content-wrapper END -->
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{%  extends '../base_kanriindex.html'  %}
+
+{% load static %}
+
+{% block content1 %}
+
+<!-- ============================== コンテンツ開始 ============================== -->
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>CSV 取込み</h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-6 col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">CSV 取込み（仮）</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+<!--================ 完了メッセージ ================-->
+                <p class="bg-success text-white ok-m">CSVアップロードが完了しました。</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row" style="margin:25px 0 25px 0">
+   
+     <div class="col-lg-10 col-xs-12">
+        
+        <h3>取込み結果 表示</h3>
+
+<!--================ 取込み結果 ================-->
+<p><span class="text_big">{{ view_list | length}}</span>件取込み完了</p>
+
+<div class="table-responsive">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>メーカーコード(test)</th>
+      <th>メーカー名</th>
+      <th>商品名(test)</th>
+      <th>商品画像(test)パス</th>
+      </tr>
+  </thead>
+
+<!--================ 取得アイテム　ループ開始  ================-->
+ <tbody>
+
+
+<tr>
+{% for i in view_list %}    
+
+     {% if forloop.counter0|divisibleby:"5" %}
+     </tr>
+     <tr>
+     <td><p>  {{ i }}</p></td>
+     
+     {% else %}
+   
+    <td><p> {{ i }}</p></td>
+    {% endif %}
+  
+
+{% endfor %}
+  
+   
+  </tbody>
+
+</table>
+</div><!--  table END -->
+       
+
+     </div>
+
+
+  </div>
+</section>
+<!-- /.content -->
+
+    <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="#" class="btn btn-primary btn-sm" role="button">一覧表示画面へ</a>
+    </div>
+
+    </div>
+
+</div>
+<!-- /.content-wrapper -->
+
+{%  endblock %}
+

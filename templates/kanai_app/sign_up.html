@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
+    <title>title here</title>
+
+</head>
+<body style="background: #81D8D0">
+    <div class="container" style="padding: 2rem">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-12">
+                <div class="card bg-light">
+                    <div class="card-body mx-auto">
+                        <form method="POST" action="">
+                            {{ form.non_field_errors }}
+                            <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                            {% csrf_token %}
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    </div>
+                                    {{ form.email }}
+                                    
+                            </div> <!-- form-group// -->
+                            {{ form.email.errors }}
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    {{ form.name }}
+                            </div> <!-- form-group// -->
+                            {{ form.name.errors }}
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                </div>
+                                {{ form.password1 }}
+                                
+                            </div> <!-- form-group// -->
+                            {{ form.password1.errors }}
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                </div>
+                                {{ form.password2 }}
+                                
+                            </div> <!-- form-group// -->                                      
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">新規アカウント作成</button>
+                            </div> <!-- form-group// -->   
+                            {{ form.password2.errors }}   
+                            <p class="text-center">アカウントをお持ちの方はこちらから>>> <a href="{% url 'kanai_app:login' %}">管理画面へログイン</a> </p>                                                                 
+                        </form>
+                    </div>
+                </div> <!-- card.// -->
+            </div>
+        </div>
+    </div> <!-- container -->
+</body>

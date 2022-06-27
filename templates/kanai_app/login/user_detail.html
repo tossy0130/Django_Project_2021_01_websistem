@@ -1,0 +1,31 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+<div class="content-wrapper">
+
+<h1>ユーザー一覧</h1>
+<div class="card">
+  <div class="card-body">
+
+<h1>ユーザー詳細</h1>
+    <dl class="row">
+    <dt class="col-sm-3">ユーザー名</dt>
+    <dd class="col-sm-9">{{ user.username }}</dd>
+    <dt class="col-sm-3">姓</dt>
+    <dd class="col-sm-9">{{ user.last_name }}</dd>
+    <dt class="col-sm-3">名</dt>
+    <dd class="col-sm-9">{{ user.first_name }}</dd>
+    <dt class="col-sm-3">メールアドレス</dt>
+    <dd class="col-sm-9">{{ user.email }}</dd>
+  </dl>
+
+
+
+  </div>
+</div>
+
+</div> <!-- content-wrapper END -->
+
+
+{% endblock %}

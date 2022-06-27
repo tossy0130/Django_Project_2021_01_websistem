@@ -1,0 +1,82 @@
+[
+    {
+      "model": "kanai_app.Product",
+      "pk": 1,
+      "fields": {
+        "thumbnail": "uploaded/top_slide/1.jpg",
+        "name": "スライド01",
+        "price": 1,
+        "description": "トップページスライド 01"
+      }
+    },
+    {
+        "model": "kanai_app.Product",
+        "pk": 2,
+        "fields": {
+        "thumbnail": "uploaded/top_slide/2.jpg",
+        "name": "スライド02",
+        "price": 2,
+        "description": "トップページスライド 02"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 3,
+        "fields": {
+        "thumbnail": "uploaded/top_slide/3.jpg",
+        "name": "スライド03",
+        "price": 3,
+        "description": "トップページスライド 03"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 4,
+        "fields": {
+       "thumbnail": "uploaded/top_slide/4.jpg",
+        "name": "スライド04",
+        "price": 4,
+        "description": "トップページスライド 04"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 5,
+        "fields": {
+        "thumbnail": "uploaded/top_slide/5.jpg",
+        "name": "スライド05",
+        "price": 5,
+        "description": "トップページスライド 05"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 6,
+        "fields": {
+        "thumbnail": "uploaded/top_slide/6.jpg",
+        "name": "スライド06",
+        "price": 6,
+        "description": "トップページスライド 06"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 7,
+        "fields": {
+        "thumbnail": "uploaded/top_slide/7.jpg",
+        "name": "スライド07",
+        "price": 7,
+        "description": "トップページスライド 07"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 8,
+        "fields": {
+        "thumbnail": "uploaded/top_slide/8.jpg",
+        "name": "スライド08",
+        "price": 8,
+        "description": "トップページスライド 08"
+        }
+      }
+]

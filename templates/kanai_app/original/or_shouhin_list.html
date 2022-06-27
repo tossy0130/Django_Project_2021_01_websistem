@@ -1,0 +1,33 @@
+{% extends 'kanai_app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+            <div class="row">
+
+<!-- ===== ループ開始 ===== -->
+{% for item in or_shouhin_list %}
+
+<div class="col-lg-2">
+<p>
+    {{ item.original_cate_code }}
+</p>
+
+<p>
+    {{ item.original_cate_name }}
+</p>
+
+<p>
+    <img src="{{ MEDIA_URL }}{{ item.original_cate_thumbnail }}">
+</p>
+
+</div>
+
+{% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

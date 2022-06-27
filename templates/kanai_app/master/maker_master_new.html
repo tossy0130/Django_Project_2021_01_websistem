@@ -1,0 +1,130 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}メーカー　商品登録 | {{ block.super }}{% endblock title %}
+
+
+{% block content1 %}
+
+{% load  static %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>メーカー　商品登録</h1>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-12 col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title"></h3>
+          </div>
+
+
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+       
+<form class="" method="POST">
+
+     {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+
+<div class="row">
+  <div class="col-lg-6 col-xs-6">
+
+    <!-- メーカーコード -->
+    <div class="field">
+        {{ form.maker_code.label_tag }}
+        {{ form.maker_code}}
+        <span class="helptext">{{ form.maker_code.help_text }}</span>
+        {{ form.maker_code.errors }}
+    </div>
+
+    </div>
+
+    
+<div class="col-lg-6 col-xs-6">
+
+       <!-- メーカー名 -->
+    <div class="field">
+        {{ form.maker_name.label_tag }}
+        {{ form.maker_name}}
+        <span class="helptext">{{ form.maker_name.help_text }}</span>
+        {{ form.maker_name.errors }}
+    </div>
+
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 col-xs-6">
+
+       <!-- 販売店 -->
+    <div class="field">
+        {{ form.hanbaiten.label_tag }}
+        {{ form.hanbaiten}}
+        <span class="helptext">{{ form.hanbaiten.help_text }}</span>
+        {{ form.hanbaiten.errors }}
+    </div>
+
+    </div>
+
+    <div class="col-lg-6 col-xs-6">
+       <!-- URL -->
+    <div class="field">
+        {{ form.maker_code_url.label_tag }}
+        {{ form.maker_code_url}}
+        <span class="helptext">{{ form.maker_code_url.help_text }}</span>
+        {{ form.maker_code_url.errors }}
+    </div>
+
+  </div>
+</div>
+
+       <!-- キーワード -->
+    <div class="field">
+        {{ form.web_maker_keyword.label_tag }}
+        {{ form.web_maker_keyword}}
+        <span class="helptext">{{ form.web_maker_keyword.help_text }}</span>
+        {{ form.web_maker_keyword.errors }}
+    </div>
+
+     <div class="field" style="margin: 20px 0 20px 0">
+        <button type="submit" class="btn btn-success">送信</button>
+    </div>
+
+</form>
+              <hr>
+      </div>
+
+            <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:Maker_masterListView' %}" class="btn btn-primary btn-sm" role="button">
+              メーカー登録 一覧表示</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

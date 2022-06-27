@@ -1,0 +1,87 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% load static %}
+
+{% block title %}CSV 取込み | {{ block.super }}{% endblock %}
+
+{% block extrahead %}
+
+<script>
+    // プラグイン読み込み
+    $(document).ready(function(){
+        $('.dropify').dropify();
+    });
+</script>
+
+{% endblock %}
+
+{% block content1 %}
+
+
+
+ <!-- ============================== コンテンツ開始 ============================== -->
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>CSV 取込み</h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row" style="margin:0 0 35px 0">
+      <div class="col-lg-4 col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">CSV 取込み（仮）</h3>
+          </div>
+
+            <div>
+                <p class="btn btn-outline-success" style="margin:0 0 10px 0;">
+                <a href="{% url 'kanai_app:csv_download' %}">
+                csvテストファイル　ダウンロード
+                </a>
+                </p>
+            </div>
+
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+
+              <b> ファイル読み込み</b><br>
+
+                    <form action="{% url 'kanai_app:csv_upload_01' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <input type="file" class="dropify" data-default-file="CSVファイルを選択してください。" name="csv">
+                        <button type="submit" class="btn btn-success" name="button" style="margin:20px 0;">CSV 取込み</button>
+                    </form>
+              <hr>
+            </div>
+
+          
+
+            <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="#" class="btn btn-primary btn-sm" role="button">一覧表示画面へ</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

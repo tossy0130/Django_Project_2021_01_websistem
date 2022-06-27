@@ -1,0 +1,260 @@
+[
+    {
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 1,
+      "fields": {
+        "Toriatukai_code": "1",
+        "Toriatukai_title": "墜落制止用器具関係(ハーネス、ランヤード、安全帯関係)"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 2,
+      "fields": {
+        "Toriatukai_code": "2",
+        "Toriatukai_title": "腰袋、工具差し、工具ケース、カラビナ関係"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 3,
+      "fields": {
+        "Toriatukai_code": "3",
+        "Toriatukai_title": "工具関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 4,
+      "fields": {
+        "Toriatukai_code": "4",
+        "Toriatukai_title": "切断、穴あけ関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 5,
+      "fields": {
+        "Toriatukai_code": "5",
+        "Toriatukai_title": "位置出し、締め具関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 6,
+      "fields": {
+        "Toriatukai_code": "6",
+        "Toriatukai_title": "マーカー、ペン関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 7,
+      "fields": {
+        "Toriatukai_code": "7",
+        "Toriatukai_title": "測位、測量関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 8,
+      "fields": {
+        "Toriatukai_code": "8",
+        "Toriatukai_title": "作業補助、補修関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 9,
+      "fields": {
+        "Toriatukai_code": "9",
+        "Toriatukai_title": "塗り、慣らし関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 10,
+      "fields": {
+        "Toriatukai_code": "10",
+        "Toriatukai_title": "重量、荷締関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 11,
+      "fields": {
+        "Toriatukai_code": "11",
+        "Toriatukai_title": "ストラップ、安全コード関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 12,
+      "fields": {
+        "Toriatukai_code": "12",
+        "Toriatukai_title": "ライト関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 13,
+      "fields": {
+        "Toriatukai_code": "13",
+        "Toriatukai_title": "ヘルメット、フェイス関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 14,
+      "fields": {
+        "Toriatukai_code": "14",
+        "Toriatukai_title": "溶接関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 15,
+      "fields": {
+        "Toriatukai_code": "15",
+        "Toriatukai_title": "電気、電源関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 16,
+      "fields": {
+        "Toriatukai_code": "16",
+        "Toriatukai_title": "確認用品"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 17,
+      "fields": {
+        "Toriatukai_code": "17",
+        "Toriatukai_title": "スプレー関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 18,
+      "fields": {
+        "Toriatukai_code": "18",
+        "Toriatukai_title": "装備品関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 19,
+      "fields": {
+        "Toriatukai_code": "19",
+        "Toriatukai_title": "タンク関係"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 20,
+      "fields": {
+        "Toriatukai_code": "20",
+        "Toriatukai_title": "防災用品、安全用品関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 21,
+      "fields": {
+        "Toriatukai_code": "21",
+        "Toriatukai_title": "スコップ、レーキ、熊手、清掃用具関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 22,
+      "fields": {
+        "Toriatukai_code": "22",
+        "Toriatukai_title": "家具、家電、生活雑貨関係"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 23,
+      "fields": {
+        "Toriatukai_code": "23",
+        "Toriatukai_title": "快適商品"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 24,
+      "fields": {
+        "Toriatukai_code": "24",
+        "Toriatukai_title": "防暑・防寒関係"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Toriatukai_Cate",
+      "pk": 25,
+      "fields": {
+        "Toriatukai_code": "25",
+        "Toriatukai_title": "水道、園芸、衛生関係"
+       
+      }
+    },
+
+      {
+       "model": "kanai_app.Toriatukai_Cate",
+      "pk": 26,
+      "fields": {
+        "Toriatukai_code": "26",
+        "Toriatukai_title": "小物、おもちゃ関係"
+        }
+      }
+]

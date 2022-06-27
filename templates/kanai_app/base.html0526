@@ -1,0 +1,456 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>金井産業　サンプル</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<!--  css & JS 読み込み 02 -->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+<!-- ogani 読み込み -->
+  <!-- Google Font -->
+  
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'ogani-master/css/bootstrap.min.css' %}"  type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/elegant-icons.css' %}"  type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'ogani-master/css/style.css' %}" type="text/css">
+<!-- ogani 読み込み END -->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+
+
+<link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+
+<link href="{% static 'css/sub.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/tossy.js' %}"></script>
+
+<!-- =========== オーウェルスライダー ===============  -->
+<link rel="stylesheet" href="{% static 'cal_01/owl.carousel.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'cal_01/owl.theme.default.css' %}" type="text/css">
+
+{% block extrahead_02 %}
+{% endblock %}
+
+<!-- 取扱商品ページ　へ　読み込み -->
+{% block t_01 %}
+{% endblock  %}
+
+<!-- 企業情報ページ　へ　読み込み -->
+{% block t_02 %}
+{% endblock %}
+
+{% block t_03 %}
+{% endblock %}
+
+
+  <style>
+
+  html {
+    /* font-size: 62.5%; */
+    font-family: '-apple-system', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'MyYuGothicM', 'Yu Gothic', YuGothic, Meiryo, sans-serif;
+  }
+
+  body {padding:0 !important;background: #f5f5f5;}
+
+  .fixed-top { position: static !important;}
+
+/*------------------------ 大カテゴリー　カードデザイン部分 -------------------
+/* 見出し h1 */
+.c_h1 {padding: 0.22em 0.4em 0em !important;color: #494949;background: transparent;border-left: solid 10px #7db4e6;
+font-size: 1.8em !important;margin: 20px 0px;
+}
+
+img { max-width: 100%;vertical-align: bottom;}
+
+.l-wrapper {margin: 3rem auto;width: 320px;
+}
+
+.card {background-color: #fff;box-shadow: 0 0 8px rgba(0, 0, 0, .16);color: #212121;
+  text-decoration: none;margin: 15px 15px 15px 15px;}
+
+
+.card__title {padding: 1rem 1rem 0;font-size: 1.25rem;
+  order: 1;}
+
+.card__thumbnail {margin: 0;order: 0;
+}
+
+.card__image {width: 100%;border-bottom: 2px solid #999;max-width: 145px;min-width: 145px;}
+
+.card__body {padding: 1rem;
+}
+
+.card__text {font-size: .75rem;
+}
+
+.card__text + .card__text {margin-top: .5rem;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ヘッダー開始 -->
+
+   <header class="section-header">
+            <section class="header-main">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+
+                        <!-- リンク設定 -->
+                        <a href="{% url 'kanai_app:lp' %}">
+                        <!-- リンク設定 -->
+
+                            <div class="brand-wrap">
+                                <img class="logo" src="{% static 'images/site/top/kanais.jpg' %}">
+                                <h2 class="logo-text">マルキン印</h2>
+                            </div> <!-- brand-wrap.// -->
+                        </a>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+
+                            <!-- フォームのaction属性変更 ここから　後で追加 -->
+                            <form action="{% url 'kanai_app:LpList' %}" method= "GET" class="search-wrap">
+                            <!-- フォームのaction属性変更 ここまで -->
+
+                                <div class="input-group">
+                                    <input name="q" type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button id="id_search_button" class="btn btn-warning" type="submit">
+                                        <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form> <!-- search-wrap .end// -->
+                        </div> <!-- col.// -->
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="widgets-wrap d-flex justify-content-end">
+                                
+                                <div class="widget-header icontext">
+                                    <div class="icon-wrap icon-sm bg2 round text-secondary"><i class="fa fa-user"></i></div>
+                                    <div class="text-wrap">
+                                        <small>ゲスト</small>
+                                    </div>
+                                </div> <!-- widget  dropdown.// -->
+                            </div>	<!-- widgets-wrap.// -->	
+                        </div> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- container.// -->
+            </section> <!-- header-main .// -->
+        </header> <!-- section-header.// -->
+
+<!-- ヘッダー　終了 -->
+
+<!-- メガメニュー nav 開始 -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+<!-- スマホ & タブレットの時にだけ表示 -->
+  <a class="navbar-brand" href="#">Mega Dropdown</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<!-- スマホ & タブレットの時にだけ表示 END -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <!-- HOMR -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'kanai_app:lp' %}">HOME</a>
+      </li>
+
+      <!--　オリジナル品 -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          　オリジナル品
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                
+                <ul class="nav flex-column">
+                   <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'kanai_app:Original_CateListView' %}">名命札</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">マルキン印 帆布腰袋</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">マルキン印 ナイロン工具差し</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">マルキン印 帆布収納ケース</a>
+                </li>
+
+                 <li class="nav-item">
+                  <a class="nav-link" href="#">マルキン印 ハンマー江・頭</a>
+                </li>
+
+
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <a href="">
+                  <img src="{% static 'images/site/top/ctlg.jpg' %}" alt="" class="img-fluid">
+                </a>
+                <p class="text-white">Short image call to action</p>
+
+              </div>
+              <!-- /.col-md-4  -->
+            </div>
+          </div>
+          <!--  /.container  -->
+
+
+        </div>
+      </li>
+       <!--　オリジナル品  END -->
+
+      <!--　取扱品 -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          取扱品
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+<div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <span class="text-uppercase text-white"></span>
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'kanai_app:toriatukai' %}">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <a href="">
+                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                </a>
+                <p class="text-white">Short image call to action</p>
+
+              </div>
+              <!-- /.col-md-4  -->
+            </div>
+</div>
+          <!--  /.container  -->
+
+
+        </div>
+      </li>
+      <!--　取扱品 END -->
+      
+      <!-- 会社概要 -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'kanai_app:Corporate_info' %}">企業情報</a>
+      </li>
+
+       <!-- 採用情報 -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'kanai_app:employment_info' %}">採用情報</a>
+      </li>
+
+          <!-- お問い合わせ -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'kanai_app:contact_info' %}">お問い合わせ</a>
+      </li>
+
+        </div>
+      </li>
+
+    </ul>
+ 
+  </div>
+
+
+</nav>
+
+<!-- メガメニュー nav END -->
+
+
+  <!-- Nav デザイン　02 シンプル 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">金井産業</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  -->
+
+<!-- Page Content -->
+<div class="container" style="padding: 2rem;box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
+
+<!-- エラーメッセージ　表示 -->
+
+ {% if messages %}
+        {% for message in messages %}
+            <!-- ▼▼▼  ▼▼▼ -->
+            <div{% if message.tags %} class="my-3 alert alert-{% if message.tags == "error" %}danger
+            {% else %}{{ message.tags }}{% endif %} alert-dismissible fade show"{% endif %} role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- ▲▲▲  ▲▲▲ -->
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+
+</div>
+<!-- /.container -->
+
+ <!-- footer 開始 -->
+   <footer class="section-footer bg2">
+            <div class="container">
+                <section class="footer-bottom row">
+                    
+                    <div class="col-sm-12">
+                        <p class="text-sm-center">
+       Copyright © 2021 KanaiCorporation. All Rights Reserved
+        <a href="#"></a>
+                        </p>
+                    </div>
+                </section> <!-- //footer-top -->
+            <!-- //container -->
+            </div>
+        </footer>
+  
+  <!-- footer 終了 -->
+ <!-- container END -->
+
+  
+  <!-- origin テーマ　読み込み js -->
+   <!-- Js Plugins -->
+    <script src="{% static 'ogani-master/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'ogani-master/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'ogani-master/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'ogani-master/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'ogani-master/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'ogani-master/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'ogani-master/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'ogani-master/js/main.js' %}"></script>
+  <!-- origin テーマ　読み込み js END -->
+
+  <!-- ================ オーウェル　読み込み js =================  -->
+
+    <script src="{% static 'cal_01/owl.carousel.js' %}"></script>
+    <script src="{% static 'cal_01/owl.carousel.min.js' %}"></script>
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- CDN -->
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+{% block scripts %}{% endblock %}
+
+<!-- 商品詳細画面　で　読み込み -->
+{% block shoudai_head %}
+{% endblock %}
+
+</body>
+
+</html>

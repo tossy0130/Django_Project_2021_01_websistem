@@ -1,0 +1,123 @@
+{% extends 'kanai_app/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+
+.search-box {background:#fff;}
+
+.search-box-list {border: 1px solid #ccc;padding: 5px 5px;margin: 5px 10px;}
+
+/******************  message の　表示メッセージ　非表示 ***********************/
+body > div.container > div.my-3.alert.alert-info.alert-dismissible.fade.show {
+    display:none;
+}
+
+.get-search-h3 {margin: 10px 0 25px 0;}
+
+.get-search-text {color: #4f86f9;display: inline-block;}
+
+.search-ul {list-style: none;}
+
+.search-sum {font-size:22px;}
+
+.search-sum > span {font-size:33px; font-weight:600;padding: 0 5px;}
+
+/*** 旧サイト　リンク ***/
+.kyou_site {}
+.kyou_site > span {display:block; }
+
+.ImgBox_Img {
+  transition-duration: 0.88s;
+}
+
+.ImgBox_Img:hover{
+  transform: scale(1.12);
+  transition-duration: 0.88s;
+}
+
+
+
+</style>
+
+<!--===========   検索結果表示   ============-->
+<div class="container">
+
+<!-- 検索結果　が　空の場合 -->
+{% if not object_list %}
+
+<ul class="search-ul">
+    <li>
+        <h3 class="get-search-h3"> 検索結果が<span class="get-search-text_02">0</span>件<br />検索ワードを変えて検索してください</3>
+    </li>
+</ul>
+
+  <p class="kyou_site">
+     <span><a href="http://kanai-marukin.com/">旧サイトからお探しください</span>
+     <span><img src="{% static 'images/site/kyou-site.png' %}" width="200" class="ImgBox_Img"></span>
+     </a>
+ </p>
+
+ 
+
+{% else %}
+<!-- 検索結果 ヒット -->
+
+<div>
+      <!--  検索ワードを出力 -->
+    {% if messages %}
+        
+        <ul class="search-ul">
+{% for message in messages %}
+
+        <li>
+            <h3 class="get-search-h3"> <span class="get-search-text">{{ message }} </span>の検索結果です</3>
+        </li>
+
+      
+
+        
+
+{% endfor %}
+        </ul>
+
+        <p class="search-sum">全<span class="search-big">{{ object_list | length }}</span>件</p>
+
+    {% endif %}
+    </div>
+
+{% endif %}
+ 
+    <div class="row search-box">
+    <h2></h2>
+
+    {% for item in object_list  %}
+
+    <div class="col-lg-2 col-xs-3 search-box-list">
+        
+        
+            <p class="card-text">
+                {{ item.Test_shouhin_010_str }}
+                {{ item.Test_shouhin_010_name }}
+                {{ item.Test_shouhin_010_code_02 }}
+            </p>
+
+            <hr>
+            <div class="card-body">
+
+            <img src="{{item.Test_shouhin_010_image.url}}" alt="" />
+
+            <p><a href="{% url 'kanai_app:detail' item.pk %}">詳細</a></p>
+            </div>
+
+      
+    </div>
+
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

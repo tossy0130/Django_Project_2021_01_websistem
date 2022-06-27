@@ -1,0 +1,97 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}取扱商品カテゴリー　編集 | {{ block.super }}{% endblock title %}
+
+{% block content1 %}
+
+{% load  static %}
+
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>取扱商品カテゴリー　編集</h1>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+ <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+
+            <h3 class="box-title"></h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+
+ <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+<div class="fieldWrapper">
+    {{ form.Medium_code.errors }}
+    <label for="{{ form.Medium_code.id_for_label }}">品名カテゴリーコード（WEB用）</label>
+    {{ form.Medium_code }}
+</div>
+
+<div class="fieldWrapper">
+    {{ form.Medium_title.errors }}
+    <label for="{{ form.Medium_title.id_for_label }}">品名カテゴリータイトル（WEB用）</label>
+    {{ form.Medium_title }}
+</div>
+
+<div class="fieldWrapper">
+    {{ form.Medium_image.errors }}
+    <label for="{{ form.Medium_image.id_for_label }}">サムネイル画像（WEB用）</label>
+    <p>{{ form.Medium_image }}</p>
+</div> 
+
+<div class="fieldWrapper">
+    {{ form.M_Toriatukai_code.errors }}
+    <label for="{{ form.M_Toriatukai_code.id_for_label }}">親カテゴリー </label>
+    {{ form.M_Toriatukai_code }}
+</div>
+
+<div class="fieldWrapper">
+    {{ form.M_code.errors }}
+    <label for="{{ form.M_code.id_for_label }}">紐づけ番号 </label>
+    {{ form.M_code }}
+</div>
+
+        <input type="submit" class="btn btn-success" value="更新する">
+</form>
+
+  
+
+ 
+
+          </div>
+        </div>
+      </div>
+
+<div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:Medium_categoryListView' %}" class="btn btn-primary btn-sm" role="button">一覧表示画面へ</a>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+ 
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+{% endblock %}
+

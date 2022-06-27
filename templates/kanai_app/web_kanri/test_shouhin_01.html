@@ -1,0 +1,300 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}テスト　商品登録 01 | {{ block.super }}{% endblock title %}
+
+
+{% block content1 %}
+
+{% load  static %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>テスト　商品登録 01</h1>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-12 col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title"></h3>
+          </div>
+
+
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+       
+<form class="" method="POST" enctype="multipart/form-data">
+    {{ form.non_field_errors }}
+
+
+<div class="row">
+  <div class="col-lg-6 col-xs-6">
+
+    <!-- メーカーコード -->
+    <div class="field">
+        {{ form.Test_shouhin_010_code.label_tag }}
+        {{ form.Test_shouhin_010_code}}
+        <span class="helptext">{{ form.Test_shouhin_010_code.help_text }}</span>
+        {{ form.Test_shouhin_010_code.errors }}
+    </div>
+
+  </div>
+
+  <div class="col-lg-6 col-xs-6">
+
+     <!-- メーカー名 -->
+    <div class="field">
+        {{ form.Test_shouhin_010_name.label_tag }}
+        {{ form.Test_shouhin_010_name }}
+        <span class="helptext">{{ form.Test_shouhin_010_name.help_text }}</span>
+        {{ form.Test_shouhin_010_name.errors }}
+    </div>
+
+    </div>
+
+</div> <!-- row END -->
+
+  
+     <!-- 商品名 -->
+    <div class="field">
+        {{ form.Test_shouhin_010_str.label_tag }}
+        {{ form.Test_shouhin_010_str }}
+        <span class="helptext">{{ form.Test_shouhin_010_str.help_text }}</span>
+        {{ form.Test_shouhin_010_str.errors }}
+    </div>
+
+  
+<div class="row">
+    <div class="col-lg-6 col-xs-6">
+    <!-- メーカー小カテゴリー -->
+    <div class="field">
+        {{ form.Test_shouhin_010_code_02.label_tag }}
+        {{ form.Test_shouhin_010_code_02 }}
+     <span class="helptext">{{ form.Test_shouhin_010_code_02.help_text }}</span>
+        {{ form.Test_shouhin_010_code_02.errors }}
+    </div>
+
+    </div>
+
+     <div class="col-lg-6 col-xs-6">
+    <!-- メーカー小カテゴリー名 -->
+     <div class="field">
+        {{ form.Test_shouhin_010_name_02.label_tag }}
+        {{ form.Test_shouhin_010_name_02 }}
+        <span class="helptext">{{ form.Test_shouhin_010_name_02.help_text }}</span>
+        {{ form.Test_shouhin_010_name_02.errors }}
+    </div>
+
+    </div>
+
+</div> <!-- row END -->
+
+    <!-- サムネイル画像 -->
+    <div class="field">
+        {{ form.Test_shouhin_010_image.label_tag }}
+        {{ form.Test_shouhin_010_image }}
+        <span class="helptext">{{ form.Test_shouhin_010_image.help_text }}</span>
+        {{ form.Test_shouhin_010_image.errors }}
+    </div>
+
+    <!-- 商品カテゴリーコード　外部キー -->
+    <div class="field">
+        {{ form.T_Medium_code_02.label_tag }}
+        {{ form.T_Medium_code_02 }}
+        <span class="helptext">{{ form.T_Medium_code_02.help_text }}</span>
+        {{ form.T_Medium_code_02.errors }}
+    </div>
+
+    <!-- =========== 追加　カラム ================= -->
+
+    <!-- jan コード -->
+     <div class="field">
+        {{ form.jan_code.label_tag }}
+        {{ form.jan_code }}
+        <span class="helptext">{{ form.jan_code.help_text }}</span>
+        {{ form.jan_code.errors }}
+    </div>
+
+    <!-- counter コード -->
+     <div class="field">
+        {{ form.counter.label_tag }}
+        {{ form.counter }}
+        <span class="helptext">{{ form.counter.help_text }}</span>
+        {{ form.counter.errors }}
+    </div>
+
+      <!-- 検索用品名 -->
+     <div class="field">
+        {{ form.search_hinmei.label_tag }}
+        {{ form.search_hinmei }}
+        <span class="helptext">{{ form.search_hinmei.help_text }}</span>
+        {{ form.search_hinmei.errors }}
+    </div>
+
+      <!-- 商品説明 -->
+     <div class="field">
+        {{ form.description_item.label_tag }}
+        {{ form.description_item }}
+        <span class="helptext">{{ form.description_item.help_text }}</span>
+        {{ form.description_item.errors }}
+    </div>
+
+     <!-- 規格 -->
+     <div class="field">
+        {{ form.kikaku.label_tag }}
+        {{ form.kikaku }}
+        <span class="helptext">{{ form.kikaku.help_text }}</span>
+        {{ form.kikaku.errors }}
+    </div>
+
+     <!-- 仕様名称 01 -->
+     <div class="field">
+        {{ form.siyou_name_01.label_tag }}
+        {{ form.siyou_name_01 }}
+        <span class="helptext">{{ form.siyou_name_01.help_text }}</span>
+        {{ form.siyou_name_01.errors }}
+    </div>
+
+      <!-- 仕様内容 01 -->
+     <div class="field">
+        {{ form.siyou_content_01.label_tag }}
+        {{ form.siyou_content_01 }}
+        <span class="helptext">{{ form.siyou_content_01.help_text }}</span>
+        {{ form.siyou_content_01.errors }}
+    </div>
+
+       <!-- 仕様名称 02 -->
+     <div class="field">
+        {{ form.siyou_name_02.label_tag }}
+        {{ form.siyou_name_02 }}
+        <span class="helptext">{{ form.siyou_name_02.help_text }}</span>
+        {{ form.siyou_name_02.errors }}
+    </div>
+
+      <!-- 仕様内容 02 -->
+     <div class="field">
+        {{ form.siyou_content_02.label_tag }}
+        {{ form.siyou_content_02 }}
+        <span class="helptext">{{ form.siyou_content_02.help_text }}</span>
+        {{ form.siyou_content_02.errors }}
+    </div>
+
+      <!-- 仕様名称 03 -->
+     <div class="field">
+        {{ form.siyou_name_03.label_tag }}
+        {{ form.siyou_name_03 }}
+        <span class="helptext">{{ form.siyou_name_03.help_text }}</span>
+        {{ form.siyou_name_03.errors }}
+    </div>
+
+      <!-- 仕様内容 03 -->
+     <div class="field">
+        {{ form.siyou_content_03.label_tag }}
+        {{ form.siyou_content_03 }}
+        <span class="helptext">{{ form.siyou_content_03.help_text }}</span>
+        {{ form.siyou_content_03.errors }}
+    </div>
+
+      <!-- 仕様名称 04 -->
+     <div class="field">
+        {{ form.siyou_name_04.label_tag }}
+        {{ form.siyou_name_04 }}
+        <span class="helptext">{{ form.siyou_name_04.help_text }}</span>
+        {{ form.siyou_name_04.errors }}
+    </div>
+
+      <!-- 仕様内容 04 -->
+     <div class="field">
+        {{ form.siyou_content_04.label_tag }}
+        {{ form.siyou_content_04 }}
+        <span class="helptext">{{ form.siyou_content_04.help_text }}</span>
+        {{ form.siyou_content_04.errors }}
+    </div>
+
+      <!-- 仕様名称 05 -->
+     <div class="field">
+        {{ form.siyou_name_05.label_tag }}
+        {{ form.siyou_name_05 }}
+        <span class="helptext">{{ form.siyou_name_05.help_text }}</span>
+        {{ form.siyou_name_05.errors }}
+    </div>
+
+      <!-- 仕様内容 05 -->
+     <div class="field">
+        {{ form.siyou_content_05.label_tag }}
+        {{ form.siyou_content_05 }}
+        <span class="helptext">{{ form.siyou_content_05.help_text }}</span>
+        {{ form.siyou_content_05.errors }}
+    </div>
+
+      <!--  廃盤 Flg -->
+     <div class="field">
+        {{ form.haiban_flg.label_tag }}
+        {{ form.haiban_flg }}
+        <span class="helptext">{{ form.haiban_flg.help_text }}</span>
+        {{ form.haiban_flg.errors }}
+    </div>
+
+     <!--  サムネイル画像  02 -->
+     <div class="field">
+        {{ form.sh_thumbnail_02.label_tag }}
+        {{ form.sh_thumbnail_02 }}
+        <span class="helptext">{{ form.sh_thumbnail_02.help_text }}</span>
+        {{ form.sh_thumbnail_02.errors }}
+    </div>
+
+     <!--  サムネイル画像  03 -->
+     <div class="field">
+        {{ form.sh_thumbnail_03.label_tag }}
+        {{ form.sh_thumbnail_03 }}
+        <span class="helptext">{{ form.sh_thumbnail_03.help_text }}</span>
+        {{ form.sh_thumbnail_03.errors }}
+    </div>
+
+     <!--  商品判別 Flg -->
+     <div class="field">
+        {{ form.shouhin_flg.label_tag }}
+        {{ form.shouhin_flg }}
+        <span class="helptext">{{ form.shouhin_flg.help_text }}</span>
+        {{ form.shouhin_flg.errors }}
+    </div>
+
+    <div class="field">
+        <button type="submit" class="btn btn-success">送信</button>
+    </div>
+
+    {% csrf_token %}
+</form>
+              <hr>
+      </div>
+
+            <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="#" class="btn btn-primary btn-sm" role="button">一覧表示画面へ</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+{% endblock %}

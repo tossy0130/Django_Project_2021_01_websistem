@@ -1,0 +1,209 @@
+[
+    {
+      "model": "kanai_app.Medium_category",
+      "pk": 11,
+      "fields": {
+        "Medium_code": "011",
+        "Medium_title": "腰袋",
+		"Medium_image":"images/uploaded/category_01/02/02_012.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Medium_category",
+      "pk": 12,
+      "fields": {
+        "Medium_code": "012",
+        "Medium_title": "帆布腰袋",
+		"Medium_image":"images/uploaded/category_01/02/02_013.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Medium_category",
+      "pk": 13,
+      "fields": {
+        "Medium_code": "013",
+        "Medium_title": "釘袋",
+		"Medium_image":"images/uploaded/category_01/02/02_014.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 14,
+      "fields": {
+        "Medium_code": "014",
+        "Medium_title": "工具ケース",
+		"Medium_image":"images/uploaded/category_01/02/02_015.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 15,
+      "fields": {
+        "Medium_code": "015",
+        "Medium_title": "溶接棒入れ",
+		"Medium_image":"images/uploaded/category_01/02/02_016.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+	
+			{
+      "model": "kanai_app.Medium_category",
+      "pk": 16,
+      "fields": {
+        "Medium_code": "016",
+        "Medium_title": "バケツ・バッグ・工具ケース",
+		"Medium_image":"images/uploaded/category_01/02/02_017.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 17,
+      "fields": {
+        "Medium_code": "017",
+        "Medium_title": "水平器ケース",
+		"Medium_image":"images/uploaded/category_01/02/02_018.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 18,
+      "fields": {
+        "Medium_code": "018",
+        "Medium_title": "小物ケース",
+		"Medium_image":"images/uploaded/category_01/02/02_019.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 19,
+      "fields": {
+        "Medium_code": "019",
+        "Medium_title": "スマホ・電子タバコ・コインケース",
+		"Medium_image":"images/uploaded/category_01/02/02_020.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+			{
+      "model": "kanai_app.Medium_category",
+      "pk": 20,
+      "fields": {
+        "Medium_code": "020",
+        "Medium_title": "カッターケース",
+		"Medium_image":"images/uploaded/category_01/02/02_021.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+			{
+      "model": "kanai_app.Medium_category",
+      "pk": 21,
+      "fields": {
+        "Medium_code": "021",
+        "Medium_title": "ハッカーケース",
+		"Medium_image":"images/uploaded/category_01/02/02_022.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 22,
+      "fields": {
+        "Medium_code": "022",
+        "Medium_title": "カラビナキーホルダー",
+		"Medium_image":"images/uploaded/category_01/02/02_023.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 23,
+      "fields": {
+        "Medium_code": "-23",
+        "Medium_title": "カラビナ工具差し",
+		"Medium_image":"images/uploaded/category_01/02/02_024.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 24,
+      "fields": {
+        "Medium_code": "024",
+        "Medium_title": "シャックル等",
+		"Medium_image":"images/uploaded/category_01/02/02_025.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 25,
+      "fields": {
+        "Medium_code": "025",
+        "Medium_title": "テープフック",
+		"Medium_image":"images/uploaded/category_01/02/02_026.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+       
+      }
+    },
+
+	
+      {
+       "model": "kanai_app.Medium_category",
+      "pk": 26,
+      "fields": {
+        "Medium_code": "026",
+        "Medium_title": "プーラー",
+		"Medium_image":"images/uploaded/category_01/02/02_027.jpg",
+		"M_Toriatukai_code":"2",
+		"M_code" : "2"
+        }
+      }
+]

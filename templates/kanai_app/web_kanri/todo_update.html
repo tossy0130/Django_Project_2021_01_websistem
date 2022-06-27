@@ -1,0 +1,29 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+<style type="text/css">
+
+/*** h1 ***/
+.to_do_h1 {padding: 20px 10px;font-size: 22px;font-weight: 500;margin: 0 0px 0 25px;}
+
+</style>
+
+<div class="content-wrapper">
+
+<h1 class="to_do_h1">To-DO リスト更新</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+
+    <button type="submit" class="btn btn-success">変更を完了する</button>
+
+</form>
+
+
+
+</div> <!-- content-wrapper END -->
+
+{% endblock %}

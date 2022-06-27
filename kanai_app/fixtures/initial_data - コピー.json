@@ -1,0 +1,82 @@
+[
+    {
+      "model": "kanai_app.Product",
+      "pk": 1,
+      "fields": {
+        "thumbnail": "1.jpg",
+        "name": "アイロン",
+        "price": 10000.0,
+        "description": "非常に使いやすいアイロンです。"
+      }
+    },
+    {
+        "model": "kanai_app.Product",
+        "pk": 2,
+        "fields": {
+          "thumbnail": "2.jpg",
+          "name": "ブレンダー",
+          "price": 200.0,
+          "description": "様々なものをブレンドできます。"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 3,
+        "fields": {
+          "thumbnail": "3.jpg",
+          "name": "バッグ",
+          "price": 30000.0,
+          "description": "おしゃれなバッグです。"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 4,
+        "fields": {
+          "thumbnail": "4.jpg",
+          "name": "スマートフォン",
+          "price": 20000.0,
+          "description": "使いやすいスマートフォンです。"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 5,
+        "fields": {
+          "thumbnail": "5.jpg",
+          "name": "ソファ",
+          "price": 2600000.0,
+          "description": "上質な素材を使ったソファです。"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 6,
+        "fields": {
+          "thumbnail": "6.jpg",
+          "name": "チェア",
+          "price": 260000.0,
+          "description": "上質な素材を使ったチェアです。"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 7,
+        "fields": {
+          "thumbnail": "7.jpg",
+          "name": "腕時計",
+          "price": 76000.0,
+          "description": "おしゃれな腕時計です。"
+        }
+      },
+      {
+        "model": "kanai_app.Product",
+        "pk": 8,
+        "fields": {
+          "thumbnail": "8.jpg",
+          "name": "ディスプレイ",
+          "price": 6000.0,
+          "description": "リーズナブルなディスプレイです。"
+        }
+      }
+]

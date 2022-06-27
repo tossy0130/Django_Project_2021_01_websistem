@@ -1,0 +1,42 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+<style>
+
+/*** h1 ***/
+.to_do_h1 {padding: 20px 10px;font-size: 22px;font-weight: 500;margin: 0 0px 0 25px;}
+
+</style>
+
+<div class="content-wrapper">
+
+<h1 class="to_do_h1">To-DO リスト作成</h1>
+
+
+<div class="card">
+  <div class="card-body">
+
+    <form method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-success">リスト作成</button>
+
+    </form> <!-- END form -->
+
+  </div>
+</div>
+
+  <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:kanri_top' %}" class="btn btn-primary btn-sm" role="button">管理画面トップへ戻る</a>
+  </div>
+
+
+
+</div> <!-- content-wrapper END  -->
+
+
+{% endblock %}

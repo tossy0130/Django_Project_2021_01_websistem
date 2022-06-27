@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <title>title here</title>
+
+</head>
+<body>
+        <div class="jumbotron text-xs-center">
+            <h1 class="display-3">アカウント登録が完了しました。</h1>
+                <p class="lead"><strong>アカウント名:{{user.get_username }}様</strong> </p>
+            <hr>
+            <a class="btn btn-success" href="{% url 'kanai_app:login' %}">管理画面へログイン</a>
+        </div>
+            
+</body>
+</html>

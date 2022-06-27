@@ -1,0 +1,509 @@
+{% extends 'kanai_app/base.html' %}
+
+{% load static%}
+
+{% block t_03 %}
+
+<style>
+
+/*** ページタイトル ***/
+.corp-h2 {position: relative;padding-bottom: 20px;text-align: center;color: #4f86f9;font-size: 16px;}
+
+.corp-h2 > span {
+    display: block;font-size: 38px;line-height: 1.2;letter-spacing: 0.05em;font-weight: 400;
+}
+
+
+.em-info {
+    margin: 35px 0;font-size: 1.16rem;text-align: center;line-height: 1.66;letter-spacing: 0.2rem;
+}
+
+/*** h2 ***/
+.mod-heading2 {font-size: 1.14rem;line-height: 1.3;position: relative;
+    margin-bottom: 1em;padding-left: 1em;color: #000;}
+
+.mod-heading2::before {position: absolute;top: .4em;left: 0;
+    display: inline-block;width: 10px;height: 10px;content: '';background: #4f86f9;
+}
+
+/*** h3 ***/
+.mod-heading3 {
+    font-size: 1.08rem;
+    line-height: 1.5;
+    margin: 0 0 0.8em;
+    color: #000;
+}
+
+/*** h4 ***/
+.m-h4 {font-size: 1.01rem;line-height: 1.5;margin: 0 0 0.8em;
+    color: #000;letter-spacing: 0.45rem;}
+
+/*** h5 ***/
+.m-h5 {font-size: 1.01rem;line-height: 1.5;margin: 0 0 0.8em;
+    color: #3bd381;letter-spacing: 0.45rem;}
+
+.mod-p {
+line-height: 2;margin: 0 0 1em;font-size: 0.92rem
+}
+
+/*** hr ***/
+
+hr {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+cssCSS
+hr {
+  border-top: 1px solid #ccc;
+}
+
+
+hr {
+  border-top: 2px dashed #eceded;margin: 15px 0;
+}
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+<!-- =============== 採用ページ　表示 start ===================-->
+
+<h2 class="corp-h2">
+        採用情報
+        <span class="mont">RECRUIT</span>
+</h2>
+
+<div class="em-info">
+金井産業では、工具・道具好きな貴方、色々なことに興味のある貴方を待っています。<br />
+世の中にありそうでないマルキン印品を一緒に考え、作りませんか！
+</div>
+
+<!-- ============= コンテンツ部分 開始=============== -->
+<!-- ========== １行目 ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2"> 事業内容・会社の特徴</h2>
+
+    </div>
+
+    <div class="col-lg-9 col-xs-12">
+
+        <p class="mod-p">
+作業工具、保安用品、建築資材、雑貨等の卸売業です。<br />
+ナショナルブランド品はもちろん他商社様の珍しいオリジナル品も積極的に取り扱う異色の問屋です。<br />
+毎週水曜日にホームページの更新をしていますので是非一度取扱品の幅広さをご覧ください。<br />
+<br />
+「世の中にあったらいいな」をマルキン印というブランドで形にし<br />
+誰に、どうやって届け、喜んで頂けるか、全てを社員全員で考えよう！を経営方針として実践しています。<br />
+そして社員一人ひとりの頑張りを、努力を公平に給料、ボーナスに反映させ<br />
+やりがいを感じて頂く為に人事評価制度を導入しています。
+        </p>
+
+    </div>
+</div>
+<!-- ========== １行目 END ========= -->
+
+
+<!-- ========== 2行目 ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+    <div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2"> 勤務地</h2>
+
+    </div>
+
+    <div class="col-lg-9 col-xs-12">
+
+        <p class="mod-p">
+
+<h3 class="mod-heading3">本社</h3>
+<p class="mod-p">
+〒955-0803<br />新潟県三条市月岡1-23-36<br />TEL　0256-35-1111
+</p>
+
+<h3 class="mod-heading3">札幌営業所</h3>
+<p class="mod-p">
+〒003-0873<br />北海道札幌市白石区米里3条2-1-35<br />TEL　011-875-7600
+</p>
+
+</p>
+
+    </div>
+
+
+</div><!-- ========== 2行目 END ========= -->
+
+
+<!-- ========== 3行目 ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+    <div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2"> 職種と仕事内容</h2>
+
+    </div>
+
+    <div class="col-lg-9 col-xs-12">
+
+<h3 class="mod-heading3">本社</h3>
+
+<h4 class="m-h4">営業職(見習いからでも可)</h4>
+
+<h5 class="m-h5">＊仕事内容及びアピールポイント<h5>
+
+<p class="mod-p">
+
+営業１０名で北海道、東北、北陸、関東方面へと担当を分け、毎月１週間から１０日、社用車（アクア、フイット、ノート等の乗用車）
+での営業活動を行っています。基本的には金物店様、工具店様、建材店様、作業服店様等の職人さんが出入りされる小売店様がメイン
+のお客様です。単なるルート営業ではありません、新規開拓が営業としての一番の仕事と考えます。既存のお客様を回りながら常に新
+しい販路を開拓しましょう。知らない土地へ行って初めてのお客様に自分を売り込み商品を買って頂いた時の喜びは他の職種では味わ
+えません。何処へ行って何を売って頂いても構いません、飛び込んだ先のお客様からのご要望品の取り扱いが無ければ仕入れ先様も探
+せばいい。世の中に無い商品ならマルキン印というオリジナル品として作っちゃいましょう。良くも悪くも何でも屋、困ったら金井へ
+聞け！問屋として業界の１番を目指します。各地区、各営業によって売る物が違います、最初は各地区の営業の出荷補助をしながら商品
+知識を付けてもらいます。自他共に営業としてＯＫとなれるのにどのくらいかかるか、出張に出れるか否かはあなた次第です。
+</p>
+
+<h5 class="m-h5">＊仕事内容及びアピールポイント<h5>
+
+<p class="mod-p">
+基本的に営業２人に対して１人の出荷補助と１人の事務担当と４人１チームで日々の仕事をこなしています。お客様からの商品の問い合
+わせ、見積もり依頼などの電話応対、受発注、経理、全てＰＣを使った仕事となります。全て商品知識が無ければこなせない仕事ですの
+で商品の品出し、ＨＰの更新作業などと常に兼務となります。次々と発売される新商品の知識を全社員とともにつけながら営業が不在の
+時など頼られる事務担当を目指しましょう。
+</p>
+
+<h5 class="m-h5">＊求める人材、必要な経験<h5>
+
+<p class="mod-p">
+学歴、年齢、性別は問いませんがＰＣを使っての経理事務の経験者に限らせて頂きます。お客様が来社された際の応対も大事な仕事となり
+ますので明るく挨拶の出来る方は基本です。誰とでも仲良くなれる方、何にでもチャレンジ精神、向上心を持ち合わせている方を求めます。
+</p>
+
+
+<h4 class="m-h4">総合職</h4>
+
+<h5 class="m-h5">＊仕事内容及びアピールポイント<h5>
+
+<p class="mod-p">
+
+当社の主な仕事として営業、事務、ＷＥＢ担当、そして出荷等があります。他にオリジナル商品の企画、開発、販売には全社員が関わってい
+ます。決まった仕事だけではなく何事にもチャレンジしてみたいという方、デスクワークもＰＣも好きだが体を動かすことも好きだという方。
+まだ年齢的にも若く、社会経験等も浅く、自分にあった仕事を模索中という方。営業だけはすぐにという訳にはいきませんがこれらの様々な
+仕事を経験してもらいながらどのような形で貢献して頂けるか相談させて頂きます。
+</p>
+
+<h5 class="m-h5">＊求める人材、必要な経験<h5>
+
+<p class="mod-p">
+いずれの仕事においてもアナログからデジタルの世の中となっています。今までの仕事でもプライベートでも毎日ＰＣやモバイルを使っているという方。
+</p>
+
+<hr>
+
+<h3 class="mod-heading3">札幌営業所</h3>
+<h4 class="m-h4">事務職(営業、経理、ＯＡ)</h4>
+
+
+    </div>
+
+</div><!-- ========== 4行目 END ========= -->
+
+
+<!-- ========== 5行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">求めるスキル・経験</h2>
+
+    </div>
+
+    <div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+普通自動車免許　(AT限定可)<br>
+今後ますますＨＰでの情報発信に力を入れていきますのでパソコンが得意という方大歓迎です。
+</p>
+
+    </div>
+</div>
+<!-- ========== 5行目 END ========= -->
+
+
+<!-- ========== 6行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">求雇用形態</h2>
+
+    </div>
+
+    <div class="col-lg-9 col-xs-12">
+
+<h3 class="mod-heading3">正社員</h3>
+<p class="mod-p">
+現在準社員、パートタイム、アルバイトでの雇用はありません。
+</p>
+
+    </div>
+</div>
+<!-- ========== 6行目 END ========= -->
+
+<!-- ========== 7行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">給料、ボーナス、昇給</h2>
+
+    </div>
+
+    <div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+基本給は変わりません。
+人事評価制度に基づいた頑張り、努力を能力給としてプラスさせて頂きます。
+</p>
+
+<h4 class="m-h4">その他手当</h4>
+<p class="mod-p">
+給食手当(補助)　２，５００円<br />
+皆勤手当　２，５００円<br />
+自宅より距離に応じて通勤費(補助)<br />
+<br />
+給料(評価)の見直し　年２回　(２月、８月)<br />
+ボーナス　年２回　(８月、１２月)<br />
+<br />
+詳細はハローワークの求人票をご覧ください
+</p>
+
+    </div>
+</div>
+<!-- ========== 7行目 END ========= -->
+
+<!-- ========== 8行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">待遇・福利厚生</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+雇用、労災、健康、厚生、財形等各種保険制度有り
+</p>
+
+    </div>
+</div>
+<!-- ========== 8行目 END ========= -->
+
+<!-- ========== 9行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">勤務時間</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<h3 class="mod-heading3">就業時間　８時３０分～１７時３０分</h3>
+
+<p class="mod-p">
+昼食休憩　１２時～１３時<br />
+<br />
+残業は一切ありません、終業のチャイムと共に皆でゴミを片付け始め、遅くとも１８時には皆が退社しています。<br />
+少しでも早く帰って家族や友人との時間に当てて頂いて明日への活力としてもらえれば幸いです。
+</p>
+
+    </div>
+</div>
+<!-- ========== 9行目 END ========= -->
+
+
+<!-- ========== 10行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">休日</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+地域商工会発行における休日計画カレンダーに基づいて営業しています。
+</p>
+
+<h3 class="mod-heading3"><a href="#">2021年　燕三条産業カレンダー</a>　(年間休日１０７日)</h3>
+
+<p class="mod-p">
+一部休出勤日の入れ替えがあります。<br />
+土曜日の出勤日(年間約２０日)は午前中で業務終了です。
+</p>
+
+    </div>
+</div>
+<!-- ========== 10行目 END ========= -->
+
+
+<!-- ========== 11行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">定年制</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+６０歳で一度退職金をお支払いさせて頂いた後、当社に貢献さえして下されば何歳まででも勤務延長させて頂きます。<br />
+給料等も６０歳を過ぎても下げることはしません、年齢等は給料の査定には関係ありません。<br />
+実際に６０歳を過ぎた営業マンが売り上げをアップしてくれて給料もアップさせて頂きました。
+</p>
+
+    </div>
+</div>
+<!-- ========== 11行目 END ========= -->
+
+<!-- ========== 12行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">その他</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+他社様と当社を十分に比較した上で履歴書をお送りください、１～２日以内に面接日などの連絡をさせて頂きます。<br />
+お互いに「こんなはずではなかった」ということが無いように色々と質問をしてください。<br />
+</p>
+
+    </div>
+</div>
+<!-- ========== 12行目 END ========= -->
+
+
+<!-- ========== 13行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">応募方法</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+求人は年間を通じて随時受け付けております。
+</p>
+
+<h4 class="m-h4">
+○希望職種を明記して履歴書(顔写真貼付)と一緒にお送りください。
+</h4>
+
+<h4 class="m-h4">
+○電話、<a href="#">メール</a>にてご連絡下さい。
+</h4>
+
+<h4 class="m-h4">
+○<a href="#">応募フォーム</a>よりご記入下さい。
+</h4>
+
+
+    </div>
+</div>
+<!-- ========== 13行目 END ========= -->
+
+
+<!-- ========== 14行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">応募書類送付先</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+本社、札幌営業所、希望勤務地へお願い致します。
+</p>
+
+<h2 class="mod-heading2">採用担当</h2>
+
+<h3 class="mod-heading3">
+本社 / 社長　金井
+</h3>
+
+<h3 class="mod-heading3">
+札幌営業所 / 所長　高野
+</h3>
+
+    </div>
+</div>
+<!-- ========== 14行目 END ========= -->
+
+<!-- ========== 15行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">選考方法</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+履歴書を見せて頂いた後、面接日のご相談を電話させて頂きます。
+</p>
+
+    </div>
+</div>
+<!-- ========== 15行目 END ========= -->
+
+
+<!-- ========== 16行目  ========= -->
+<div class="row" style="border-bottom: 1px solid #eceded;margin: 15px 0;">
+
+<div class="col-lg-3 col-xs-12">
+
+           <h2 class="mod-heading2">選考結果</h2>
+
+    </div>
+
+<div class="col-lg-9 col-xs-12">
+
+<p class="mod-p">
+面接させて頂いた後１、２日後に郵送にてお知らせ致します。
+</p>
+
+    </div>
+</div>
+<!-- ========== 16行目 END ========= -->
+
+
+
+{% endblock %}

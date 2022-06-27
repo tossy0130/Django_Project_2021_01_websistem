@@ -1,0 +1,70 @@
+[
+	
+	 {
+      "model": "kanai_app.Medium_category",
+      "pk": 104,
+      "fields": {
+        "Medium_code": "104",
+        "Medium_title": "荷締機荷締ベルト",
+		"Medium_image":"images/uploaded/category_01/10_104.jpg",
+		"M_Toriatukai_code":"10",
+		"M_code" : "10"
+       
+      }
+    },
+	
+    
+	 {
+      "model": "kanai_app.Medium_category",
+      "pk": 105,
+      "fields": {
+        "Medium_code": "105",
+        "Medium_title": "結束用品",
+		"Medium_image":"images/uploaded/category_01/10_105.jpg",
+		"M_Toriatukai_code":"10",
+		"M_code" : "10"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Medium_category",
+      "pk": 106,
+      "fields": {
+        "Medium_code": "106",
+        "Medium_title": "クランプ",
+		"Medium_image":"images/uploaded/category_01/10_106.jpg",
+		"M_Toriatukai_code":"10",
+		"M_code" : "10"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Medium_category",
+      "pk": 107,
+      "fields": {
+        "Medium_code": "107",
+        "Medium_title": "荷車台車",
+		"Medium_image":"images/uploaded/category_01/10_107.jpg",
+		"M_Toriatukai_code":"10",
+		"M_code" : "10"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 108,
+      "fields": {
+        "Medium_code": "108",
+        "Medium_title": "ロープ",
+		"Medium_image":"images/uploaded/category_01/10_108.jpg",
+		"M_Toriatukai_code":"10",
+		"M_code" : "10"
+       
+      }
+    }
+	
+	
+]

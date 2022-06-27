@@ -1,0 +1,186 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}新着情報　作成 | {{ block.super }}{% endblock title %}
+
+{% block news_01 %}
+
+<style type="text/css">
+
+.btn_gg{border-radius: 4px;background-color: #c9c7c7;border:none;
+  padding: 12px 15px;text-align: center;color: #fff;margin: 10px;}
+
+
+/* プレビュー表示用 */
+.t_prev {
+    background:#fafafa;border-radius: 6px;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 14%) !important;margin: 30px 0px;
+}
+
+.pv_content {
+    border: 3px solid #dedede;
+    padding: 15px;background: #fff;
+}
+
+.prev-v-box {
+    margin: 0 0 0 25px;
+}
+
+</style>
+
+<script type="text/javascript">
+//--------- プレビューボタン  ＊＊＊　成功
+
+$(function(){
+
+  $('iframe').load(function(){
+
+    // summernoteの iframe 取得
+    var iframe = $('iframe').contents();
+
+    $('#btn_go').click(function(){
+
+      var get_iframe = iframe.find('.note-editable');
+
+      // iframe の値を取って　表示
+      $('.pv_content').html(get_iframe.html());
+
+    });
+  });
+
+
+});//------- プレビュー END function
+
+$(function(){
+
+  $('iframe').load(function(){
+
+    var iframe_ul = $('iframe').contents().find('.dropdown-menu.dropdown-style');
+
+    iframe_ul.find('li').each(function(){
+
+      console.log($(this).text());
+
+    });
+
+  });
+});
+
+</script>
+
+{% endblock %}
+
+{% block content1 %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>TOPページ　新着情報を作成します。</h1>
+    <ol class="breadcrumb">
+
+    <!-- 
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+    -->
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+   
+      <div class="col-lg-12 col-xs-12">
+        <div class="box">
+        
+          <!-- Content -->
+      
+          <div class="box-header">
+            <h3 class="box-title"></h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+
+
+<div class="row">
+
+<div class="col-lg-5 col-xs-12">
+
+<form method="POST" enctype="multipart/form-data">
+
+     {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <div class="field">
+        {{ form.new_title.label_tag }}
+        {{ form.new_title }}
+        <span class="helptext">{{ form.new_title.help_text }}</span>
+        {{ form.new_title.errors }}
+    </div>
+
+     <div class="field">
+        {{ form.text.label_tag }}
+        {{ form.text | safe }}
+        <span class="helptext">{{ form.text.help_text }}</span>
+        {{ form.text.errors }}
+    </div>
+
+     <div class="field">
+        <button type="submit" class="btn btn-success">保存</button>
+    </div>
+
+</form>
+
+</div>
+
+<!--====== プレビューエリア =====-->
+<div class="col-lg-5 prev-v-box col-xs-12">
+
+ <p><button class="btn_gg" id="btn_go">プレビュー</button></P>
+    
+
+ <div class="pv_content">
+ 
+ </div>
+
+<div class="pv_content_02"></div>
+
+</div>
+
+
+</div> <!--  row END -->
+
+
+              <hr>
+            </div>
+
+            <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:kanri_top' %}" class="btn btn-primary btn-sm" role="button">一覧表示画面へ</a>
+            </div>
+
+ 
+ 
+
+
+        
+        </div>
+      </div>
+    
+  </div>
+</section>
+<!-- /.content -->
+
+
+
+
+
+</div>
+<!-- /.content-wrapper -->
+
+
+{% endblock %}

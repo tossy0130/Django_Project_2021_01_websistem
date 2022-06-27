@@ -1,0 +1,193 @@
+{% extends 'kanai_app/base.html' %}
+
+{% load static %}
+
+{% block t_01 %}
+
+<style>
+
+.panel-group {}
+
+.panel {display: flex;-ms-flex-wrap: wrap;
+    flex-wrap: wrap;margin-right: -15px;margin-left: -15px;}
+
+.tab-group{display: flex;justify-content: center;}
+
+.tab{flex-grow: 1;padding:5px;list-style:none;border:solid 1px #CCC;text-align:center;
+  cursor:pointer;}
+
+.panel{display:none;}
+
+.tab.is-active{background:#4f86f9;color:#FFF;transition: all 0.2s ease-out;}
+
+.panel.is-show{display:flex;}
+
+div.mid-cate {
+    border: 1px solid #e0e0e0;margin: 20px 10px 20px 10px;background: #fff;padding: 5px 10px;
+}
+
+div.mid-cate:hover {
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.s-link {
+    background: #ff3368;color: #fff;padding: 5px 25px;
+    margin: 0px 0px;position: relative;left: 25%;
+}
+
+.s-bottom-box {
+    margin: 0 0 15px 0;
+}
+
+.tori-h3 {
+    margin: 10px 14px 10px;font-family: 'RobotoB', 'NotoSansB', sans-serif;
+    font-size: 1.12rem;line-height: 1.2;font-weight: 600;
+}
+
+</style>
+
+<script>
+
+jQuery(function($){
+	$('.tab').click(function(){
+		$('.is-active').removeClass('is-active');
+		$(this).addClass('is-active');
+		$('.is-show').removeClass('is-show');
+        // クリックしたタブからインデックス番号を取得
+		const index = $(this).index();
+        // クリックしたタブと同じインデックス番号をもつコンテンツを表示
+		$('.panel').eq(index).addClass('is-show');
+	});
+});
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+    <p>表示OK</p>
+
+<!--タブ-->
+ <ul class="tab-group">
+
+ {% for i in Medium_code %}
+
+    {% ifchanged i.Test_shouhin_010_name %}
+        
+        {% if forloop.first %}
+            <li class="tab is-active">{{ i.Test_shouhin_010_name }}</li>
+        {% else %}
+            <li class="tab">{{ i.Test_shouhin_010_name }}</li>
+        {% endif %}
+    
+    {% else %}
+
+
+    {% endifchanged %}
+   
+{% endfor %}
+</li>
+</ul>
+
+
+<!--タブを切り替えて表示するコンテンツ
+<div class="panel-group">
+	<div class="panel is-show">Content-A</div>
+	<div class="panel">Content-B</div>
+	<div class="panel">Content-C</div>
+</div>
+-->
+
+        <div class="panel-group">
+	        <div class="row panel is-show">
+
+        {% for item in Medium_code %}
+
+         {% if item.Test_shouhin_010_code == '001' %}
+
+         <div class="col-lg-3 col-sm-6 mid-cate">
+            
+
+                <p class="card-text">
+                        <h3 class="tori-h3"> {{ item.Test_shouhin_010_str }} </h3>
+
+                        {{ item.Test_shouhin_010_code }}
+                        <br />
+                        {{ item.Test_shouhin_010_name }}
+                    
+                      
+                </p>
+                
+                    <hr>
+            <div class="card-body">
+                <img src="{{ item.Test_shouhin_010_image.url }}" class="card-img-top" alt="..." />
+            </div>
+
+            <div class="s-bottom-box">
+                <a href="{% url 'kanai_app:Medium_Shouhin_detail' item.pk %}?m_code={{ item.Test_shouhin_010_code }}" class="s-link">詳細{{ item.pk }}</a>
+            </div>
+
+        
+    </div>
+
+  {% elif item.Test_shouhin_010_code == '002' %}
+
+        </div> <!--===== panel is-show -->    
+
+        <div class="row panel">
+    
+
+   <div class="col-lg-3 col-sm-6 mid-cate">
+
+                <p class="card-text">
+
+                     <h3 class="tori-h3"> {{ item.Test_shouhin_010_str }} </h3>
+
+                    {{ item.Test_shouhin_010_code }}
+                    <br />
+                    {{ item.Test_shouhin_010_name }}
+                
+                </p>
+
+                  <hr>
+                
+            <div class="card-body">
+                <img src="{{ item.Test_shouhin_010_image.url }}" class="card-img-top" alt="..." />
+            </div>
+
+            <div class="s-bottom-box">
+                <a href="{% url 'kanai_app:Medium_Shouhin_detail' item.pk %}?m_code={{ item.Test_shouhin_010_code }}" class="s-link">詳細{{ item.pk }}</a>
+            </div>
+
+
+    </div>
+
+    {% endif %}
+
+{% endfor %}
+
+
+<!--============ Loop END ================-->
+
+            </div> <!-- panel END -->
+
+       
+
+       
+    </div> <!-- panel-group END  -->
+
+
+    
+    <div style="margin:20px 0px;">
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm">戻る</a>
+    </div>
+
+    {% for i in Medium_code_02 %}
+
+        <p>{{ i }}</p>
+
+    {% endfor %}
+
+    {% endblock %}

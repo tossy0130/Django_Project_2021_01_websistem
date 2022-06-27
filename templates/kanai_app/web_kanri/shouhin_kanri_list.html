@@ -1,0 +1,154 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}商品アイテム　一覧 | {{ block.super }}{% endblock title %}
+
+{% block or_shouhin %}
+
+<style>
+
+.t-head {background-color: #dbdbdb;}
+
+
+</style>
+
+{% endblock %}
+
+{% block content1 %}
+
+{% load  static %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>商品一覧</h1>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+<!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12">
+       
+<div class="table-responsive" style="font-size:14px;">
+    <table class="table table-bordered table-condensed">
+
+        <thead>
+        <tr class="t-head">
+        
+        <!--======   th == 13  =======-->
+            <th>変更</th>
+            <th>メーカーコード</th>
+            <th>メーカー名</th>
+            <th>商品名</th>
+            <th>メーカー小カテゴリー</th>
+            <th>メーカー小カテゴリー名</th>
+            <th>サムネイル画像 01</th>
+            <th>親 商品カテゴリーコード</th>
+            <th>JAN コード</th>
+            <th>検索用品名</th>
+            <th>商品説明</th>
+         
+            
+        </tr>
+        </thead>
+
+    <tbody>
+
+    {% for item in shouhin_list %}
+
+    <tr>
+
+        <td>
+            <p>
+                <a href="{% url 'kanai_app:kanri_s-uodate' item.pk %}">
+                変更
+                </a> 
+            </p>
+        </td>
+
+
+        <td>   
+            <p>
+                {{ item.Test_shouhin_010_code }}
+            </p>
+        </td>
+    
+        <td>   
+            <p>
+                {{ item.Test_shouhin_010_name }}
+            </p>
+        </td>
+        
+        <td>
+            <p>
+                {{ item.Test_shouhin_010_str }}
+            </p>
+        </td>
+
+        <td>
+            <p>
+                {{ item.Test_shouhin_010_code_02 }}
+            </p>
+        </td>
+
+        <td>
+            <p>
+                {{ item.Test_shouhin_010_name_02 }}
+            </p>
+        </td>
+
+        <td>
+             <p>
+                <img src="{{ item.Test_shouhin_010_image.url }}" width="85">
+            </p>
+        </td>
+
+        <td>
+            <p>
+                {{ item.T_Medium_code_02 }}
+            </p>
+        </td>
+
+        <td>
+             <p>
+                {{ item.jan_code }}
+            </p>
+        </td>
+
+         <td>
+            <p>
+                {{ item.search_hinmei }}
+            </p>
+        </td>
+
+         <td>
+            <p>
+                {{ item.description_item }}
+            </p>
+        </td>
+
+   
+    
+    
+        </tr>
+    {% endfor %}
+
+             </tbody>
+   </table>
+  
+        
+        </div>
+
+    </div>
+</div>
+</section>
+
+</div>
+
+{% endblock %}
+

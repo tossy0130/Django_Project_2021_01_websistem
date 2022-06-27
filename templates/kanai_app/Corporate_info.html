@@ -1,0 +1,559 @@
+{% extends 'kanai_app/base.html' %}
+
+{% load static%}
+
+{% block t_02 %}
+
+<style>
+
+.panel-group {font-family:"游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;}
+
+.panel_02 {display: flex;-ms-flex-wrap: wrap;
+    flex-wrap: wrap;margin-right: -15px;margin-left: -15px;}
+
+.tab-group{display: block;justify-content: center;}
+
+.tab_02{list-style: none;border-bottom: solid 1px #CCC;text-align: center;
+    cursor: pointer;padding: 25px 0;}
+
+.panel_02{display:none;}
+
+.tab_02.is-active_02{color:#4f86f9;transition: all 0.2s ease-out;}
+
+.panel_02.is-show_02{display:block;margin: 25px 25px;}
+
+/**************** コンテンツ部分  ***************/
+
+/*** ページタイトル h2 ***/
+
+.corp-h2 {position: relative;padding-bottom: 20px;text-align: center;color: #4f86f9;font-size: 16px;}
+
+.corp-h2 > span {
+    display: block;font-size: 38px;line-height: 1.2;letter-spacing: 0.05em;font-weight: 400;
+}
+
+/*** 01:タイトル  コンテンツタイトル ***/
+.corp-h3 {margin-bottom: 30px;text-align: center;color:#4f86f9;
+font-size: 22px;font-weight: bold;letter-spacing: 0.1em;}
+
+.corp-h3 > span {display: block;width: 230px;margin: 0 auto 15px;
+font-family: 'Roboto', sans-serif;border-bottom: 1px solid #ccc;font-size: 120px;
+font-weight: 100;line-height: 1.1;letter-spacing: 0;color: #4f86f9;}
+
+.tegaki { 
+     font-family: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", 
+     "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+     font-size: 20px;letter-spacing: 0.2em;line-height: 1.6em;
+}
+
+/***************** 会社情報　****************/
+
+.profile-list > li {
+    display: flex;flex-wrap: wrap; border-bottom: 1px solid #ccc;
+}
+
+.profile-list > li > p {box-sizing: border-box;width: 237px;padding: 9px 40px 8px 0;
+    color:#3bd381;;
+}
+
+.profile-list > li > h4 {
+    width: calc(100% - 237px);padding: 9px 0 8px;font-size: 20px;
+    letter-spacing: 0.09em;padding: 13px 40px 12px 0;
+}
+
+
+.row.map_g {
+    width: 700px;
+}
+
+/******** Googleマップ ********/
+.gmap {height: 0;overflow: hidden;padding-bottom: 56.25%;position: relative;}
+
+.gmap iframe {position: absolute;left: 0;top: 0;height: 100%;width: 100%;}
+
+
+hr {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/***　線 ***/
+
+hr {
+ border-top: 1px dashed #ccc;
+}
+
+.map-h4 {
+     padding: 1rem 2rem;border-top:1px solid #ccc;border-bottom: 1px solid #ccc;
+     color:#3bd381;
+}
+
+.map-h4-02 {
+     padding: 1rem 2rem;border-top:1px solid #ccc;border-bottom: 1px solid #ccc;
+     color:#3bd381;margin: 25px 0px;text-align: center;
+}
+
+.gakkan_btn {width:100%}
+
+.big-img {}
+
+/******** スマホ ,  タブレット ********/
+@media screen and (max-width: 990px) {
+
+    .profile-list > li > p {
+       
+    }
+
+    .profile-list > li > h4 {
+            font-size: 14px;
+             width: 100%;
+    }
+
+    .tegaki { 
+        font-size: 14px;
+
+ }
+}
+
+ /******* メディアクエリ END ********/
+
+.thumbnail {width:100%;}
+
+#largeImg {display: none; width:800px !important;}
+
+.largeImg {width:800px !important;}
+
+#back-curtain{ background: rgba(0, 0, 0, 0.5);display: none;position: absolute; left: 0; top: 0;}
+
+
+/****** 画像拡大 END ******/
+
+
+ #image1 {
+      transition: all 500ms 0s ease;
+    }
+    .on {
+      width:50%;
+      transform: scale(2.0, 2.0);
+    }
+    .off {
+      transform: scale(1.0, 1.0);
+    }
+
+
+</style>
+
+<script type="text/javascript">
+
+//***************** tab_02 切り替え *****************
+
+$(document).ready(function(){
+
+    $('.panel_02').eq(0).addClass('is-show_02');
+jQuery(function($){
+    $('.tab_02').click(function(){
+
+        $('.is-active_02').removeClass('is-active_02');
+        $(this).addClass('is-active_02');
+
+        $('.is-show_02').removeClass('is-show_02');
+        
+        // Click した　index を取得
+        const index = $(this).index();
+
+        $('.panel_02').eq(index).addClass('is-show_02');
+
+    });
+  });
+});
+
+</script>
+
+<script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+
+
+{% endblock %}
+
+{% block content %}
+
+<!--========  タブ　開始 ===========-->
+
+
+
+ <h2 class="corp-h2">
+        企業情報
+        <span class="mont">BUSINESS</span>
+</h2>
+
+
+    <div class="row">
+        
+        <div class="col-lg-3 col-xs-12">
+
+            <ul class="tab-group">
+                       <li class="tab_02 is-active_02">
+                            企業理念
+                       </li>
+
+                        <li class="tab_02">
+                            会社概要
+                       </li>
+
+                         <li class="tab_02">
+                            アクセスマップ
+                       </li>
+
+                        <li class="tab_02">
+                            社内風景
+                       </li>
+            </ul>
+
+        </div>
+
+        <!--========  コンテンツページ 開始 ===========-->
+
+        <div class="col-lg-9 col-xs-12">
+            
+                      <div class="panel-group">
+
+	                        <div class="panel_02 is-show">     
+                               
+                            <h3 class="corp-h3"><span>01</span>
+                            企業理念
+                            </h3>
+<p class="tegaki">職人さんからの意見を取り入れたありそうでないオリジナル品を武器に新しい販路を開拓し続けております。</p>
+
+                            <p>
+                                <img src="{% static 'images/corporate_info/corporate_01.jpg' %}">
+                            </p>
+
+　
+                            </div>
+
+                    <div class="panel_02">     
+                                
+                        <h3 class="corp-h3"><span>02</span>
+                            会社概要
+                        </h3>
+
+                        <div>
+
+                     <ul class="profile-list">
+                     
+						 <li class="">
+							 <p class="">代 表 者</p>
+							 <h4 class="">代表取締役社長　金井 孝夫</h4>
+						 </li>
+
+                        <li class="">
+							 <p class="">創 業</p>
+							 <h4 class="">昭和29年7月1日</h4>
+						 </li>
+
+                        <li class="">
+							 <p class="">創 立</p>
+							 <h4 class="">昭和43年10月1日</h4>
+						</li>
+
+                         <li class="">
+							 <p class="">資 本 金</p>
+							 <h4 class="">2,000万円</h4>
+						</li>
+
+                        <li class="">
+							 <p class="">従 業 員 数</p>
+							 <h4 class="">
+本社：20名<br />
+札幌：6名<br />
+合計：26名 (2021年1月6日現在)</h4>
+						</li>
+
+                        <li class="">
+							 <p class="">業 務 内 容</p>
+							 <h4 class="">保安用品、作業工具、測定工具、電動工具、建築金物等の卸売業</h4>
+						</li>
+
+                        <li class="">
+							 <p class="">業 務 内 容</p>
+							 <h4 class="">北海道、東北、北陸、関東を中心とした作業服店、金物店、工具店、建材店等、約700社</h4>
+						</li>
+
+                     </ul> <!-- ===== 企業情報　END ===== -->
+
+                        </div> <!-- テーブル END -->
+
+                       
+                </div> <!-- content 2 END -->
+                            
+                <!--================= アクセスマップ ============== -->
+
+<div class="panel_02"> <!-- panel_02 start -->     
+                                
+                            <h3 class="corp-h3"><span>03</span>
+                            アクセスマップ
+                            </h3>
+
+
+
+
+    <div class="col-lg-12 col-xs-12">
+                                    
+                                   
+        <h4 class="map-h4-02">新潟本社</h4>
+
+       
+        <p>                                     
+        　〒955-0803<br />
+        　新潟県 三条市 月岡 1丁目 23番 36号<br />
+        　TEL　0256-35-1111<br />
+        　FAX　0256-35-1113
+        </p>          
+
+        <div class="gmap">  
+
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.5068424394867!2d138.96858255081244!3d37.61376397968992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff4e27e08f9e157%3A0x2792c08c14f868bd!2z44CSOTU1LTA4MDMg5paw5r2f55yM5LiJ5p2h5biC5pyI5bKh77yR5LiB55uu77yS77yT4oiS77yT77yW!5e0!3m2!1sja!2sjp!4v1620808920222!5m2!1sja!2sjp" 
+                    width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+                            
+
+        </div> 
+
+    
+    </div> <!-- マップ 本社 END -->
+
+      <div class="col-lg-12 col-xs-12" style="margin-top: 45px;">
+                                    
+                                   
+        <h4 class="map-h4-02">札幌営業所</h4>
+
+       
+        <p>                                     
+        　〒003-0873<br />
+        　北海道 札幌市 白石区 米里 3条 2丁目 1番 35号<br />
+        　TEL　011-875-7600<br />
+        　FAX　011-875-7615
+        </p>          
+
+        <div class="gmap">  
+
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.5068424394867!2d138.96858255081244!3d37.61376397968992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff4e27e08f9e157%3A0x2792c08c14f868bd!2z44CSOTU1LTA4MDMg5paw5r2f55yM5LiJ5p2h5biC5pyI5bKh77yR5LiB55uu77yS77yT4oiS77yT77yW!5e0!3m2!1sja!2sjp!4v1620808920222!5m2!1sja!2sjp" 
+                    width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+                            
+
+        </div> 
+
+    
+    </div> <!-- マップ 本社 END -->
+
+
+
+</div> <!-- panel_02 END -->
+
+
+    <div class="panel_02">     
+
+                        <h3 class="corp-h3"><span>04</span>
+                            社内風景
+                        </h3>
+
+                        <h4 class="map-h4-02">新潟本社</h4>
+
+                        <!-- 画像 item  -->
+                        <div class="row kaisya-img">
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>本社事務所①</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/syanai_img_01.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/syanai_img_01.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+                             <!-- 画像 item END -->
+
+                                 <!-- 画像 item  -->
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>本社事務所②</p>
+
+                                <p>
+                                <a href="{% static 'images/corporate_info/syanai_img_02.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/syanai_img_02.jpg' %}">
+                                </a>
+                                </p>
+                            </div>
+                                
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>本社事務所③</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/syanai_img_03.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/syanai_img_03.jpg' %}" class="big-img">
+                                    </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                             <!-- 画像 item END -->
+
+                        <!-- =============== 画像 item ２列目 ================ -->
+                        <div class="row kaisya-img">
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>本社２階倉庫</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/syanai_img_04.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/syanai_img_04.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+                             <!-- 画像 item END -->
+
+                                 <!-- 画像 item  -->
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>本社３階倉庫</p>
+
+                                <p>
+                                <a href="{% static 'images/corporate_info/syanai_img_05.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/syanai_img_05.jpg' %}">
+                                </a>
+                                </p>
+                            </div>
+                                
+                            <div class="col-lg-4 col-xs-6">
+
+                           
+
+                            </div>
+
+                        </div>  <!--============== 本社　画像 END ==================-->
+
+                        <h4 class="map-h4-02">札幌営業所</h4>
+
+                        <div class="row kaisya-img">
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>札幌(営)事務所①</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/sapporo_img_01.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/sapporo_img_01.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+
+
+                                <div class="col-lg-4 col-xs-6">
+
+                                <p>札幌(営)外観</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/sapporo_img_02.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/sapporo_img_02.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>札幌(営)倉庫②</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/sapporo_img_03.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/sapporo_img_03.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+
+                        </div> <!-- row END -->
+
+                         <!-- ========  2列目  ============ -->
+
+                        <div class="row kaisya-img">
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>札幌(営)倉庫②</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/sapporo_img_04.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/sapporo_img_04.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>札幌(営)倉庫③</p>
+
+                                <p>
+                                    <a href="{% static 'images/corporate_info/sapporo_img_05.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/sapporo_img_05.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+
+                            <div class="col-lg-4 col-xs-6">
+
+                                <p>札幌(営)倉庫④</p>
+
+                                  <p>
+                                    <a href="{% static 'images/corporate_info/sapporo_img_06.jpg' %}" data-lightbox="group">
+                                    <img src="{% static 'images/corporate_info/sapporo_img_06.jpg' %}">
+                                    </a>
+                               </p>
+
+                            </div>
+
+                        </div> <!-- row END -->
+
+
+                    </div> <!-- =========  札幌営業所 画像　END　============== -->
+
+              
+
+
+
+
+    </div> <!-- panel_02 END -->
+
+
+                        </div>
+                </div>
+                
+               
+              
+           </div>
+  
+    
+      
+    </div> <!-- row END -->
+
+{% endblock %}

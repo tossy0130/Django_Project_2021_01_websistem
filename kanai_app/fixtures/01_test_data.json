@@ -1,0 +1,52 @@
+[
+    {
+      "model": "kanai_app.Test_shouhin_01",
+      "pk": 1,
+      "fields": {
+        "Test_shouhin_01_code": "001",
+        "Test_shouhin_01_name": "メーカー名テスト01",
+        "Test_shouhin_01_str": "商品名テスト_01",
+        "Test_shouhin_01_image": "images/img_test_01/01.png"
+      }
+    },
+	{
+      "model": "kanai_app.Test_shouhin_01",
+      "pk": 2,
+      "fields": {
+        "Test_shouhin_01_code": "002",
+        "Test_shouhin_01_name": "メーカー名テスト02",
+        "Test_shouhin_01_str": "商品名テスト_02",
+        "Test_shouhin_01_image": "images/img_test_01/02.png"
+      }
+    },
+		{
+      "model": "kanai_app.Test_shouhin_01",
+      "pk": 3,
+      "fields": {
+        "Test_shouhin_01_code": "003",
+        "Test_shouhin_01_name": "メーカー名テスト03",
+        "Test_shouhin_01_str": "商品名テスト_03",
+        "Test_shouhin_01_image": "images/img_test_01/03.png"
+      }
+    },
+		{
+      "model": "kanai_app.Test_shouhin_01",
+      "pk": 4,
+      "fields": {
+        "Test_shouhin_01_code": "004",
+        "Test_shouhin_01_name": "メーカー名テスト04",
+        "Test_shouhin_01_str": "商品名テスト_04",
+        "Test_shouhin_01_image": "images/img_test_01/04.png"
+      }
+    },
+      {
+        "model": "kanai_app.Test_shouhin_01",
+        "pk": 5,
+        "fields": {
+        "Test_shouhin_01_code": "005",
+        "Test_shouhin_01_name": "メーカー名テスト05",
+        "Test_shouhin_01_str": "商品名テスト_05",
+        "Test_shouhin_01_image": "images/img_test_01/05.png"
+        }
+      }
+]

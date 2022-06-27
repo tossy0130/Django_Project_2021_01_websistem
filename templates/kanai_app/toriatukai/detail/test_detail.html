@@ -1,0 +1,89 @@
+{% extends 'kanai_app/base.html' %}
+
+{% load static %}
+
+{% block shoudai_head %}
+
+<style type="text/css">
+
+
+/*** 商品説明　ディティールエリア ***/
+
+.detail-box{background: #fff;padding: 25px 10px;
+}
+
+
+.detail_img {width:272px; border: 1px solid #ccc;}
+
+.s-setumei {margin: 28px 0 34px;font-size: 1.22rem;line-height: 1.47;}
+
+.s-detail-h5 {border-bottom: 1px solid #ccc;color: #007bff;padding: 0 0 10px 0;}
+
+.s-setumei-box {margin: 25px 0 0 0;}
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="row detail-box">
+    {% for item in get_detail_item %}
+
+    <div class="col-lg-4 col-xs-6">
+      <img src="{{item.Test_shouhin_010_image.url}}" alt="..." class="detail_img"/>
+    </div>
+
+    <div class="col-md-8 col-xs-6">
+  
+        <h4> 
+             {{ item.Test_shouhin_010_str }}
+        </h4>
+
+        <div class="s-setumei-box">
+            <h5 class="s-detail-h5">商品説明</h5>
+            <p class="s-setumei">{{ item.description_item }}</p>
+        </div>
+
+        <p class="">
+          
+        </p>
+
+        {% if item.siyou_name_01 == null %}
+
+        <p> 詳細なし </p>
+
+        {% else %}
+
+        <p>{{ item.siyou_name_01 }}</p>
+
+        {% endif %}
+    
+  </div>
+
+
+    {% endfor %}
+
+  </div>
+
+  {% for i in query_obj %}
+
+  <p>{{ i.Test_shouhin_010_name }}</p>
+
+  {% endfor %}
+
+  {% for n in kanren_query %}
+
+  <p>{{ n.Test_shouhin_010_name }}</p>
+
+  {% endfor %}
+
+<div style="margin:20px 0px;">
+    <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm">戻る</a>
+</div>
+
+
+
+{% endblock %}

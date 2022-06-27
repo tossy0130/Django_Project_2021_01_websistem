@@ -1,0 +1,80 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+    <style>
+        table {
+            table-layout: fixed;
+            font-size: 12px;
+        }
+
+
+th.suta_day {background:lightskyblue;}
+
+th.sun_day {background:lavenderblush;}
+    </style>
+
+<div class="content-wrapper">
+
+<div class="card">
+  <div class="card-body">
+ 
+
+    
+ <a href="{% url 'calendar_app:month_with_forms' month_previous.year month_previous.month %}" class="btn btn-warning">前月</a>
+    {{ month_current | date:"Y年m月" }}
+    <a href="{% url 'calendar_app:month_with_forms' month_next.year month_next.month %}" class="btn btn-success">次月</a>
+
+    <form action="" method="POST">
+        {{ month_formset.management_form }}
+        <table class="table">
+            <thead>
+            <tr>
+                {% for w in week_names %}
+                    {% if w == '土' %}
+                    <th class="suta_day">{{ w }}</th>
+                    {% elif w == '日' %}
+                    <th class="sun_day">{{ w }}</th>
+                    {% else %}
+                    <th>{{ w }}</th>
+                    {% endif %}
+
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for week_day_forms in month_day_forms %}
+                <tr>
+                    {% for day, forms in week_day_forms.items %}
+                        {% if now == day %}
+                            <td class="table-success">
+                                {% else %}
+                            <td>
+                        {% endif %}
+
+                    <div>
+                        {% if month_current.month != day.month %}
+                            {{ day | date:"m/d" }}
+                        {% else %}
+                            {{ day.day }}
+                        {% endif %}
+
+                        {% for form in forms %}
+                            {{ form.as_p }}
+                        {% endfor %}
+                    </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+
+  </div>
+</div>
+
+</div> <!-- content-wrapper -->
+
+{% endblock %}

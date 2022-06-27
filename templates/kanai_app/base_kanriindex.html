@@ -1,0 +1,698 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- タイトル -->
+  <title>{% block title %}管理ページ{% endblock title %}</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/jqvmap/jqvmap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/dist/css/adminlte.min.css' %}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static 'Kanr_01/plugins/summernote/summernote-bs4.min.css' %}">
+
+<!--============== dropify css  -->
+<link rel="stylesheet" href="{% static 'css/dropify.css' %}">
+
+<style type="text/css">
+
+/*** 管理ページ　エラー表示　時の　おたすけメッセージ ***/
+.errorlist {background: red;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 2px;}
+
+.info {display: none;}
+
+/*** BULMA ボタン a ***/
+.button.is-primary > a {
+  color: #fff !important;
+}
+
+/*** csv 取込みページ ***/
+.text_big {font-size: 35px;
+    margin: 5px 10px;
+    font-weight: 500; }
+
+/*** 完了メッセージ ***/
+.ok-m {background-color: #28a745!important;padding: 7px 13px;border-radius: 4px;}
+
+.nav-item {font-size:13px;}
+
+.btn {margin:20px 15px;}
+
+/*** To-Do 部分 ***/
+.home {
+  display: table-cell !important;
+}
+
+.list {
+  width: 240px;
+  height: 100%;
+}
+
+</style>
+
+
+</style>
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+
+ <a href="{% url 'kanai_app:kanri_top' %}" class="nav-link">Home</a>
+<!--         <a href="#" class="nav-link">Home</a>  -->
+      </li>
+      
+      {% if user.is_authenticated %}
+
+      <!-- ================ ここから以下を追加 ================ -->
+        <li>
+            <a class="nav-link" href="{% url 'accounts:user_detail' user.pk %}">ユーザ名：{{ user.get_username }}</a>
+        </li>     
+   
+        <!-- ================ここまで ================ -->
+		
+		{% else %}
+			
+		<li>
+            <a class="nav-link" href="#">テスト中：ログインされていません</a>
+        </li>   
+
+        {% endif %}
+      
+
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <!--****************** ページ　印刷ボタン ********************-->
+      <button onclick="window.print()" class="btn btn-primary" style="font-size: 12px;">ページ印刷</button>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+	
+<!--
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+-->
+      <span class="brand-text font-weight-light">KANAI_WEB</span>
+
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+
+          <p> <a href="{% url 'kanai_app:lp' %}">
+          <i class="fas fa-file-powerpoint"></i>
+          WEBサイトを表示</a></p>
+
+<!-- 
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+
+-->
+        </div>
+
+<!-- 
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+
+-->
+
+      </div>
+
+    
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+      
+          <li class="nav-item">
+            <a href="{% url 'kanai_app:kanri_top' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               メインメニュー
+              </p>
+            </a>
+          </li>
+
+          <!-- =========== サイドメニュー 01 ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+               　ダッシュボード（テスト）
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">menu</span>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+            <!-- サブ サイドメニュー 01 -->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:csv_upload_01' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>CSV取込み</p>
+                </a>
+              </li>
+
+           <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:Toriatukai_Cate_new' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 取扱商品 大カテゴリー 新規追加</p>
+                </a>
+              </li>
+
+			       <!-- サブ サイドメニュー 05 -->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:Test_shouhin_010_new' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Test 商品　新規追加</p>
+                </a>
+              </li>
+			
+			 </ul>
+          </li>
+
+          
+             <!-- =========== サイドメニュー 02 ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-globe-asia"></i>
+              <p>
+              WEB 表示管理（中カテゴリー設定）
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">WEB</span>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+			
+			         <!-- サブ サイドメニュー 04 -->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:Medium_categoryListView' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>中カテゴリー 一覧</p>
+                </a>
+              </li>
+
+			
+			    <!-- サブ サイドメニュー 03 -->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:Medium_categoryForm_new' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>中カテゴリー　新規追加</p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+
+
+                 <!-- =========== サイドメニュー TO-DO リスト ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-list-alt"></i>
+              <p>
+                TO-DO リスト
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">app</span>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+            <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="{% url 'kanban:kanban_create' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TO-DOリスト 新規作成</p>
+                </a>
+              </li>
+
+              <!--  サブ サイドメニュー 02-->
+              <li class="nav-item">
+                <a href="{% url 'kanban:kanban_list' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TO-DOリスト 一覧</p>
+                </a>
+              </li>
+       
+            </ul>
+          </li> <!-- END li  TO-DO リスト END  -->
+
+		       <!-- =========== サイドメニュー 04 ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                オリジナル商品管理
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">web</span>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+            <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:Original_Cate_new' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>オリジナル商品カテゴリー　作成</p>
+                </a>
+              </li>
+
+             <!--  サブ サイドメニュー 02 -->
+             <li class="nav-item">
+                <a href="{% url 'kanai_app:kanri_s' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>登録 商品一覧</p>
+                </a>
+              </li>
+
+            <!-- サブ サイドメニュー 03 -->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:create_news' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>新着情報 作成</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+      
+             <!-- =========== サイドメニュー 03 ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                ユーザー管理
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">setting</span>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+            <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ユーザー追加</p>
+                </a>
+              </li>
+
+                 <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ユーザー一覧</p>
+                </a>
+              </li>
+
+      
+            </ul>
+          </li>
+
+
+           <!-- =========== サイドメニュー 05 ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                メーカーマスター設定
+                <i class="fas fa-angle-left right">master</i>
+                <!-- 
+                <span class="badge badge-info right">master</span>
+                -->
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+            <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="{% url 'kanai_app:Maker_master_new' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>メーカーマスター　登録</p>
+                </a>
+              </li>
+
+             <!--  サブ サイドメニュー 02 -->
+             <li class="nav-item">
+                <a href="{% url 'kanai_app:Brand_master_new' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ブランドマスター　登録</p>
+                </a>
+              </li>
+
+            <!-- サブ サイドメニュー 03 -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>メニュー03</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+   
+          <!-- =========== サイドメニュー 設定 ==========-->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                設定
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">setting</span>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+            <!--  サブ サイドメニュー 01-->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>test</p>
+                </a>
+              </li>
+
+       
+            </ul>
+          </li> <!-- END li  サイドメニュー END  -->
+
+
+         
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+
+{% block content1 %}
+{% endblock %}
+
+
+
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy;2021 KanaiCorporation.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'Kanr_01/plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'Kanr_01/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+ //  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'Kanr_01/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- ChartJS -->
+<script src="{% static 'Kanr_01/plugins/chart.js/Chart.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'Kanr_01/plugins/sparklines/sparkline.js' %}"></script>
+<!-- JQVMap -->
+<script src="{% static 'Kanr_01/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+<script src="{% static 'Kanr_01/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'Kanr_01/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'Kanr_01/plugins/moment/moment.min.js' %}"></script>
+<script src="{% static 'Kanr_01/plugins/daterangepicker/daterangepicker.js' %}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{% static 'Kanr_01/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<!-- Summernote -->
+<script src="{% static 'Kanr_01/plugins/summernote/summernote-bs4.min.js' %}"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'Kanr_01/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'Kanr_01/dist/js/adminlte.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'Kanr_01/dist/js/demo.js' %}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'Kanr_01/dist/js/pages/dashboard.js' %}"></script>
+
+<!--============== dropify js  -->
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- Js CDN 読み込み 開始 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/lang/summernote-ja-JP.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Js CDN 読み込み 終了 -->
+
+<!-- BULMA 読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+
+<script src="{% static 'js/dropify.js' %}"></script>
+
+
+
+<!--============== dropify js  csv_import.html  -->
+{% block extrahead %}
+{% endblock %}
+
+<!-- ============  or_shouhin_list.html で読み込み -->
+{% block or_shouhin %}
+{% endblock %}
+
+<!-- ============  news_01.html  で読み込み -->
+{% block news_01 %}
+{% endblock %}
+
+<!-- ============  maker  で読み込み -->
+{% block maker_01 %}
+{% endblock %}
+
+<!-- ============  maker  で読み込み -->
+{% block brand_01 %}
+{% endblock %}
+
+<!-- ============  h_cate_list_js 中カテゴリー　読み込み -->
+{% block h_cate_list_js %}
+{% endblock %}
+
+
+
+
+</body>
+
+<!-- ここから新規追加 --> 
+<script language="JavaScript" type="text/javascript">
+// 「全て選択」チェックで全てにチェック付く
+   function AllChecked(){
+     var all = document.form.all.checked;
+     for (var i=0; i<document.form.checks.length; i++){
+       document.form.checks[i].checked = all;
+       }
+       }
+    // 一つでもチェックを外すと「全て選択」のチェック外れる
+    function　DisChecked(){
+      var checks = document.form.checks;
+      var checksCount = 0;
+      for (var i=0; i<checks.length; i++){
+        if(checks[i].checked == false){
+          document.form.all.checked = false;
+        }else{
+          checksCount += 1;
+          if(checksCount == checks.length){
+            document.form.all.checked = true;
+          }
+        }
+      }
+    }
+
+  
+
+</script>
+<!-- ここまで新規追加 --> 
+
+</html>

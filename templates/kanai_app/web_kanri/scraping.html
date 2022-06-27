@@ -1,0 +1,29 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+
+<div class="content-wrapper">
+
+<div class="card">
+  <div class="card-body">
+
+<p style="margin:15px;">テストURL: https://dogooyah.com/i/c6mey- <br />
+※上記のURLを、テキストボックスに、貼り付けてください。
+</p>
+<form class="form-group" action='' method='POST'>{% csrf_token %}
+<p>URL： <input type="text" name='url' style="width: 40%;"></p>
+
+<button type="submit" class="btn btn-success" style="margin: 20px 0 0 40px;">URLからデータを取得する</button> 
+</form>
+
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

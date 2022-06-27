@@ -1,0 +1,130 @@
+[
+    {
+      "model": "kanai_app.Medium_category",
+      "pk": 1,
+      "fields": {
+        "Medium_code": "001",
+        "Medium_title": "ハーネス",
+		"Medium_image":"images/uploaded/category_01/01_001.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Medium_category",
+      "pk": 2,
+      "fields": {
+        "Medium_code": "002",
+        "Medium_title": "サスペンダー",
+		"Medium_image":"images/uploaded/category_01/01_002.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+
+	{
+      "model": "kanai_app.Medium_category",
+      "pk": 3,
+      "fields": {
+        "Medium_code": "003",
+        "Medium_title": "ランヤード",
+		"Medium_image":"images/uploaded/category_01/01_003.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 4,
+      "fields": {
+        "Medium_code": "004",
+        "Medium_title": "胴ベルト用安全帯",
+		"Medium_image":"images/uploaded/category_01/01_004.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 5,
+      "fields": {
+        "Medium_code": "005",
+        "Medium_title": "フック関係",
+		"Medium_image":"images/uploaded/category_01/01_005.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+	
+			{
+      "model": "kanai_app.Medium_category",
+      "pk": 6,
+      "fields": {
+        "Medium_code": "006",
+        "Medium_title": "安全帯付属品",
+		"Medium_image":"images/uploaded/category_01/01_006.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 7,
+      "fields": {
+        "Medium_code": "007",
+        "Medium_title": "安全帯用",
+		"Medium_image":"images/uploaded/category_01/01_007.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+	
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 8,
+      "fields": {
+        "Medium_code": "008",
+        "Medium_title": "作業用ベルト",
+		"Medium_image":"images/uploaded/category_01/01_008.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+
+		{
+      "model": "kanai_app.Medium_category",
+      "pk": 9,
+      "fields": {
+        "Medium_code": "009",
+        "Medium_title": "サポートベルト",
+		"Medium_image":"images/uploaded/category_01/01_009.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+       
+      }
+    },
+
+      {
+       "model": "kanai_app.Medium_category",
+      "pk": 10,
+      "fields": {
+        "Medium_code": "010",
+        "Medium_title": "Ｄ環止",
+		"Medium_image":"images/uploaded/category_01/01_010.jpg",
+		"M_Toriatukai_code":"1",
+		"M_code":"1"
+        }
+      }
+]

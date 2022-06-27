@@ -1,0 +1,60 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block content1 %}
+
+<style>
+
+/*** h1 ***/
+.to_do_h1 {padding: 20px 10px;font-size: 22px;font-weight: 500;margin: 0 0px 0 25px;}
+
+/*** リスト　タイトル ***/
+.c_tt {width:100%;margin-bottom: 15px;color:#007bff;font-weight: 500;}
+
+</style>
+
+<div class="content-wrapper">
+     <h1 class="to_do_h1">リスト一覧</h1>
+    <div div class="card-columns">
+
+{% for item in to_do_list %}
+
+<div class="card">
+  <div class="card-body">
+
+    <h5 class="card-title c_tt">{{ item.title }}</h5>
+    <p>
+        <small class="text-muted">作成者: {{ item.user.username }}</small>
+    </p>
+
+
+<div class="row">
+
+    <div class="col-lg-6 col-md-6 col-xs-6">
+        <a href="{% url 'kanban:kanban_update' item.pk %}" class="btn btn-info">
+        リスト詳細
+        </a>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-xs-6">
+    <a href="{% url 'kanban:kanban_delete' item.pk %}" class="btn btn btn-danger">
+        削除する
+        </a>
+    </div>
+
+    </div>
+
+    </div>
+</div>
+
+{% endfor %}
+
+
+    </div> <!-- END card-columns -->
+</div> <!-- END content-wrapper -->
+
+  <div class="text-center">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:kanri_top' %}" class="btn btn-primary btn-sm" role="button">管理画面トップへ戻る</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+[
+    {
+      "model": "kanai_app.Original_Cate",
+      "pk": 1,
+      "fields": {
+        "original_cate_code": "1",
+        "original_cate_name": "名命札",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_001.jpg"
+      }
+    },
+
+  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 2,
+      "fields": {
+        "original_cate_code": "2",
+        "original_cate_name": "ナイス オリジナル工具差し",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_002.jpg"
+      }
+    },
+
+
+        {
+      "model": "kanai_app.Original_Cate",
+      "pk": 3,
+      "fields": {
+        "original_cate_code": "3",
+        "original_cate_name": "TONE シノ付メガネレンチ",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_003.jpg"
+      }
+    },
+
+
+
+	  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 4,
+      "fields": {
+        "original_cate_code": "4",
+        "original_cate_name": "マルキン印 帆布腰袋",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_004.jpg"
+      }
+    },
+	
+	  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 5,
+      "fields": {
+        "original_cate_code": "5",
+        "original_cate_name": "マルキン印 ナイロン腰袋",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_005.jpg"
+      }
+    },
+
+		
+		 {
+      "model": "kanai_app.Original_Cate",
+      "pk": 6,
+      "fields": {
+        "original_cate_code": "6",
+        "original_cate_name": "マルキン印 黒皮工具差し",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_006.jpg"
+      }
+    },
+
+
+        {
+      "model": "kanai_app.Original_Cate",
+      "pk": 7,
+      "fields": {
+        "original_cate_code": "7",
+        "original_cate_name": "マルキン印 ナイロン工具差し",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_007.jpg"
+      }
+    },
+
+
+
+	  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 8,
+      "fields": {
+        "original_cate_code": "8",
+        "original_cate_name": "マルキン印 レザー腰袋",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_008.jpg"
+      }
+    },
+	
+	  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 9,
+      "fields": {
+        "original_cate_code": "9",
+        "original_cate_name": "マルキン印 胴当てベルト",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_009.jpg"
+      }
+    },
+
+		 {
+      "model": "kanai_app.Original_Cate",
+      "pk": 10,
+      "fields": {
+        "original_cate_code": "10",
+        "original_cate_name": "マルキン印 帆布収納ケース",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_010.jpg"
+      }
+    },
+
+
+        {
+      "model": "kanai_app.Original_Cate",
+      "pk": 11,
+      "fields": {
+        "original_cate_code": "11",
+        "original_cate_name": "TOP オリジナルラチェット",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_011.jpg"
+      }
+    },
+
+			 {
+      "model": "kanai_app.Original_Cate",
+      "pk": 12,
+      "fields": {
+        "original_cate_code": "12",
+        "original_cate_name": "マルキン印 大型工具袋関係",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_012.jpg"
+      }
+    },
+
+
+        {
+      "model": "kanai_app.Original_Cate",
+      "pk": 13,
+      "fields": {
+        "original_cate_code": "13",
+        "original_cate_name": "マルキン印 ハンマー柄・頭",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_013.jpg"
+      }
+    },
+	
+  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 14,
+      "fields": {
+        "original_cate_code": "14",
+        "original_cate_name": "マルキン印 その他商品",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_014.jpg"
+      }
+    },
+
+
+	  {
+      "model": "kanai_app.Original_Cate",
+      "pk": 15,
+      "fields": {
+        "original_cate_code": "15",
+        "original_cate_name": "マルキン 総合カタログ",
+		"original_cate_thumbnail":"images/uploaded/category_original/org_015.jpg"
+      }
+    }
+
+
+]

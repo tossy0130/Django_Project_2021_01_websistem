@@ -1,0 +1,182 @@
+{% extends 'kanai_app/base_kanriindex.html' %}
+
+{% block title %}取扱商品カテゴリー　一覧 | {{ block.super }}{% endblock title %}
+
+{% block content1 %}
+
+{% load  static %}
+
+<!-- ============  maker  で読み込み -->
+{% block maker_01 %}
+
+
+<style>
+
+.t-head {background-color: #dbdbdb;}
+
+
+</style>
+
+
+{% endblock %}
+
+
+
+
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>取扱商品カテゴリー　一覧</h1>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'kanai_app:kanri_top' %}"><i class="fa fa-dashboard"></i> ホーム</a></li>
+      <li class="active">ダッシュボード</li>
+    </ol>
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-12 col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title"></h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <hr>
+            <div class="card-body">
+
+
+       
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+
+         <thead class="t-head">
+        <tr>
+            <th>編集</th>
+            <th>削除</th>
+            <th>ブランド登録</th>
+            <thメーカーコード</th>
+            <th>メーカー名</th>
+            <th>販売店</th>
+            <th>URL</th>
+            <th>キーワード</th>
+        </tr>
+        </thead>
+    <tbody>
+
+{% for item in maker_list %}
+
+<tr>
+    <td>
+      <form action="" method="POST">
+      {% csrf_token %}
+          <input type="checkbox" name="delete" value="{{ item.pk }}">
+      <button type="submit">削除</button>
+      </form>
+    </td>
+
+    <th>   
+        <p>編集</p>
+    </th>
+
+    
+    <th>   
+        <p><a href="{% url 'kanai_app:Brand_master_new' %}?m_c={{ item.maker_code }}">ブランド登録</a></p>
+    </th>
+
+    <th>   
+        <p>{{item.maker_code}}</p>
+    </th>
+
+    <td>   
+        <p>{{item.maker_name}}</p>
+    </td>
+
+     <td>   
+        <p>{{item.hanbaiten}}</p>
+    </td>
+
+      <td>   
+        <p>{{item.maker_code_url}}</p>
+    </td>
+
+     <td>   
+        <p>{{item.web_maker_keyword}}</p>
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+   </table>
+    </div>
+
+
+              <hr>
+            </div>
+
+            <div class="text-center" style="margin-bottom: 20px;">
+              <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-sm" role="button">戻る</a>
+              <a href="{% url 'kanai_app:Maker_masterListView' %}" class="btn btn-primary btn-sm" role="button">
+              メーカー登録一覧
+              </a>
+            </div>
+
+<!--================== ページネーション　開始 ===================-->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    {% endif %}
+    {% for num in paginator.page_range %}
+    {% if page_obj.number == num %}
+    <li class="page-item active">
+      <span class="page-link">
+        {{ num }}
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+<!--================== ページネーション END ===================-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+{% endblock %}

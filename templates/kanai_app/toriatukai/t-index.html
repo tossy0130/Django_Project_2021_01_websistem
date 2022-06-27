@@ -1,0 +1,187 @@
+{% extends 'kanai_app/base.html' %}
+
+{% load static %}
+
+
+
+{% block extrahead_02 %}
+
+<style>
+
+/*** ページタイトル h2 ***/
+
+.kate-h2 {margin-bottom: 30px;text-align: center;color:#4f86f9;
+font-size: 19px;font-weight: bold;letter-spacing: 0.1em;}
+
+.kate-h2 > span {display: block;width: 230px;margin: 0 auto 15px;
+font-family: 'Roboto', sans-serif;border-bottom: 1px solid #ccc;font-size: 69px;
+font-weight: 100;line-height: 1.1;letter-spacing: 0;color: #4f86f9;}
+
+
+.item_01 {
+    margin: 10px 0px;border-bottom: 1px solid #dedede;
+    padding: 15px 0px;width: 23%;position: relative;
+    left: 5%;
+}
+
+.a_sub_01 {background: #509f10;padding: 7px 13px;
+    color: #fff;font-size: 13px;border-radius: 2px;margin: 0px 0 0 25px;}
+
+/*** カテゴリー　コンテイナー ***/
+
+.cate_container{box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+    margin: 0px 0 25px 0;
+    width:1100px;background: #fff !important;
+    padding: 10px 10px 10px 10px;}
+
+
+
+/*------- 中カテゴリー　スライド css ---------*/
+.owl-carousel .owl-nav button.owl-next {
+    left: auto;right: -35px; background-color:#f5f5f5;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    background-color:#f5f5f5;
+}
+
+.owl-carousel .owl-nav button {
+    font-size: 18px;color: #1c1c1c;height: 70px;width: 30px;
+    line-height: 70px;text-align: center;border: 1px solid #ebebeb;
+    position: absolute;left: -35px;top: 50%; -webkit-transform: translateY(-35px);
+    background-color:#f5f5f5;
+}
+
+
+
+.owl-carousel .owl-nav button {
+    font-size: 18px;color: #1c1c1c;line-height: 70px;text-align: center;
+}
+
+
+</style>
+
+<script>
+
+// *********************** 取扱商品　中カテゴリー　スライド
+$(document).ready(function () {
+ $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        items: 6,
+        dots: false,
+        nav: true,
+    //    navText: ["<span class='fa fa-angle-left'><span/>", "<span class='fa fa-angle-right'><span/>"],
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        smartSpeed: 1200,
+        autoplayTimeout: 2000,
+        autoHeight: false,
+        autoplay: true,
+        responsive: {
+
+            0: {
+                items: 1,
+            },
+
+            400: {
+                items: 2,
+            },
+
+            768: {
+                items: 4,
+            },
+
+            992: {
+                items: 6,
+            }
+        }
+    });
+});
+
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+    <!-- Categories Section End -->
+   
+    {% for c_val in cate_list_val %}
+
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <!-- ============ 項目名 （タイトル） ============ -->
+                <div class="col-lg-12">
+                   
+                    
+<h2 class="kate-h2 "><span>
+      {{ c_val.Toriatukai_code }} 
+      </span>
+    {{c_val.Toriatukai_title}}
+</h2>
+
+
+                       
+                         <a href="#">{{c_val.Toriatukai_code}}</a>
+                   
+                </div>
+                
+                <!--  
+                  <div class="owl-carousel owl-theme container">
+                -->
+
+            <div class="row cate_container">
+
+            {% for m_val in m_cate_list %}
+
+                {% if c_val.Toriatukai_code == m_val.M_code %}
+
+                <!-- ======= 　サムネイル画像 & カテゴリータイトル ====== -->
+                <div class="item_01 col-rg-1">
+                      <!--  <img src="{{ MEDIA_URL }}{{ m_val.Medium_image}}" width="135"><br /> -->
+                         <img src="{{ m_val.Medium_image.url}}" width="135"><br />
+                        
+                <a href="{% url 'kanai_app:GET_Medium_code' m_val.Medium_code %}" class="a_sub_01">
+                {{ m_val.Medium_title}}
+                </a>
+                        
+                  
+                </div><!-- .item -->
+                   
+                {% else %}
+
+                
+
+                {% endif %}
+            
+            {% endfor %}
+
+            </div> <!-- END オーウェル -->
+
+            <!-- 取扱商品カテゴリー　オーウェル　NEXT , PREV ボタン
+            <div class="owl-nav"><button type="button" role="presentation" class="owl-prev">
+                <span class="fa fa-angle-left"><span></span>
+                
+                </span></button><button type="button" role="presentation" class="owl-next">
+                <span class="fa fa-angle-right"><span></span></span></button>
+            </div>
+             -->
+
+       </div>
+        </div>
+    </section>
+
+    {% endfor %}
+
+    {% for i in test_list %}
+
+    <p>{{ i }}</p>
+    
+    {% endfor %}
+
+    
+{% endblock %}
+
